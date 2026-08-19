@@ -1,0 +1,12 @@
+/* RippleGrid — 背景特效 canvas（由 ripple-grid.js 注入带 data-ripple-grid 的容器）。
+   透明底 + 页面主题陶土的 alpha 合成，叠加在纸面背景上。 */
+
+.ripple-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}

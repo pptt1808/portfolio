@@ -1,0 +1,12 @@
+/* Prism — 背景特效 canvas（由 prism.js 注入带 data-prism 的容器）。
+   透明底 + 主题三色调色板的 alpha 合成，叠加在纸面背景上。 */
+
+.prism-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}

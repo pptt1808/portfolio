@@ -1,0 +1,176 @@
+/* GooeyNav — Vue Bits <GooeyNav /> 的全站共享样式（配合 gooey-nav.js）。
+   浅色纸面主题适配，对原版做了两处改动：
+   1. 不用 blur+contrast 的 gooey 滤镜——contrast(100) 会把中间色量化成
+      高饱和纯色，主题色会被冲掉；粒子改为普通合成，颜色即主题色本身。
+   2. 效果层用 fixed 挂在 body 下并置于吸顶导航之上（原版会被半透明的
+      sticky 导航条盖住，粒子几乎看不见）。 */
+
+:root {
+  --gooey-color-1: #1f5c4b; /* 主题绿 --green */
+  --gooey-color-2: #a84d34; /* 陶土 --terracotta */
+  --gooey-color-3: #d66c4c; /* 粘土 --clay */
+  --gooey-color-4: #d9b957; /* 芥末黄 --mustard */
+  --gooey-pill: #1f5c4b;    /* 胶囊底色：主题绿，不用近黑的 --ink */
+  --gooey-pill-text: #f8f5ec;
+}
+
+/* --- 导航结构（JS 会把 nav 里的 <a> 包成 ul > li > a） --- */
+
+.gooey-nav__list {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: inherit;
+  gap: inherit;
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 章节导航是横向滚动条，给列表两侧留白，胶囊外扩部分才不会被裁掉 */
+.case-chapters .gooey-nav__list {
+  padding: 0 12px;
+}
+
+.gooey-nav__item {
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
+}
+
+/* 深色胶囊上的激活文字（真实文字在胶囊效果层之下，由 .gooey-effect.text 接力显示） */
+.gooey-nav .gooey-nav__item.active a,
+.gooey-nav .gooey-nav__item.active a:hover,
+.gooey-nav .gooey-nav__item.active a[aria-current="location"] {
+  color: var(--gooey-pill-text);
+}
+
+/* 胶囊接管“当前项”指示后，停用各导航原有的下划线 */
+.gooey-nav a::after {
+  display: none;
+}
+
+/* possibilities 章节条的当前项/悬停指示是 border-bottom（其他导航是 ::after），
+   同样由胶囊接管；:focus-visible 的边框保留，作键盘焦点提示 */
+.gooey-nav .gooey-nav__item a,
+.gooey-nav .gooey-nav__item a:hover,
+.gooey-nav .gooey-nav__item a.is-active,
+.gooey-nav .gooey-nav__item a[aria-current="location"] {
+  border-bottom-color: transparent;
+}
+
+.gooey-nav .gooey-nav__item a:focus-visible {
+  border-bottom-color: var(--coral, #bf684f);
+}
+
+/* --- 效果层：position: fixed 挂在 body 下，高于吸顶导航（z 40/70/100），低于图片对话框（500） --- */
+
+.gooey-effect {
+  position: fixed;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.gooey-effect[hidden] {
+  display: none;
+}
+
+/* 选中胶囊（尺寸/位置由 JS 按激活项测量） */
+.gooey-effect.pill {
+  border-radius: 9999px;
+  background: var(--gooey-pill);
+  opacity: 0;
+  transform: scale(0);
+}
+
+.gooey-effect.pill.active {
+  animation: gooey-pill .3s ease both;
+}
+
+@keyframes gooey-pill {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 激活项的文字副本，盖在胶囊上 */
+.gooey-effect.text {
+  display: grid;
+  place-items: center;
+  color: var(--gooey-pill-text);
+  white-space: nowrap;
+}
+
+/* 粒子层：普通合成，颜色为主题色本身 */
+.gooey-particle,
+.gooey-point {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.gooey-particle {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  animation: gooey-particle calc(var(--time, 5s)) ease 1 -350ms;
+}
+
+.gooey-point {
+  background: var(--color, var(--gooey-color-1));
+  animation: gooey-point calc(var(--time, 5s)) ease 1 -350ms;
+}
+
+@keyframes gooey-particle {
+  0% {
+    transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  70% {
+    transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  85% {
+    transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x)), calc(var(--end-y)));
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    opacity: 1;
+  }
+}
+
+@keyframes gooey-point {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  25% {
+    transform: scale(calc(var(--scale) * 0.25));
+  }
+  38% {
+    opacity: 1;
+  }
+  65% {
+    transform: scale(var(--scale));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  85% {
+    transform: scale(var(--scale));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

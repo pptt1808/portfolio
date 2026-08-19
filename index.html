@@ -1,0 +1,279 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘子豪的产品经理作品集：AI 产品实践、真实产品界面与验证闭环。">
+  <meta name="theme-color" content="#eee8da">
+  <title>刘子豪｜产品经理作品集</title>
+  <link rel="stylesheet" href="styles.css?v=20260816-2">
+  <link rel="stylesheet" href="target-cursor.css">
+  <link rel="stylesheet" href="gooey-nav.css">
+  <script src="gsap.min.js" defer></script>
+  <script src="target-cursor.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="gooey-nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-site-header>
+    <div class="header-inner">
+      <a class="wordmark" href="#top" aria-label="返回页面顶部">
+        <span>刘子豪</span>
+      </a>
+      <nav aria-label="主导航" data-gooey-nav>
+        <a href="#projects">项目</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+    <span class="reading-progress" data-reading-progress aria-hidden="true"></span>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title" data-section>
+      <div class="grid-motion" data-grid-motion aria-hidden="true">
+        <div class="grid-motion__board" data-grid-board></div>
+        <div class="grid-motion__veil"></div>
+      </div>
+      <div class="hero-copy reveal reveal--hero">
+        <p class="eyebrow"><span>产品经理</span><span>AI 产品实践者</span></p>
+        <h1 id="hero-title">
+          <span class="hero-line"><span>把复杂问题，</span></span>
+          <span class="hero-line"><span>推进成可以被</span></span>
+          <span class="hero-line"><span><em>体验和验证</em>的产品。</span></span>
+        </h1>
+        <p class="hero-intro">我从用户场景与真实约束出发，梳理产品结构、关键取舍和验证闭环，再用 AI 把想法快速推进成可交互的产品。</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="#projects">查看项目 <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="mailto:3407749043@qq.com">联系我 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="project-index" id="projects" aria-label="项目索引" data-section>
+      <p class="section-kicker">精选产品实践</p>
+      <div class="project-index-heading">
+        <h2>四种 AI 产品场景，<br>四种能力侧面的印证。</h2>
+        <p>从城市探索、职业体验和互动内容，到企业交付工作流。四个项目对应不同用户场景，也各自印证一种能力：走通从产品定义到评测回归的完整闭环，看见情绪层面的真实痛点，把不确定的模型能力收敛成可运行的工程流程，以及沉进交付现场为 AI 找到真正有价值的位置。</p>
+      </div>
+      <ol class="reveal reveal--index" data-delay="1">
+        <li><a href="#citywalk" data-project-link="citywalk"><span>01</span><b>CityWalk Pulse</b><small><span>城市探索 Agent</span><em>规划 · 行中 · 记录 · 分享</em></small></a></li>
+        <li><a href="#possibilities" data-project-link="possibilities"><span>02</span><b>See All Possibilities</b><small><span>职业体验产品</span><em>任务 · 判断 · 交付 · 反馈</em></small></a></li>
+        <li><a href="#drama" data-project-link="drama"><span>03</span><b>Drama</b><small><span>互动短剧平台</span><em>选择 · 对话 · 热点 · 高光</em></small></a></li>
+        <li><a href="#alexent" data-project-link="alexent"><span>04</span><b>Alexent</b><small><span>企业交付 Copilot</span><em>工作流 · RAG · 权限 · 记忆</em></small></a></li>
+      </ol>
+    </div>
+
+    <section class="project project--featured" id="citywalk" aria-labelledby="citywalk-title" data-section>
+      <div class="project-no" aria-hidden="true">01</div>
+      <header class="project-header reveal">
+        <div>
+          <p class="project-type">城市探索 · AI Agent</p>
+          <h2 id="citywalk-title">CityWalk Pulse</h2>
+        </div>
+        <p class="project-lede">一个贯穿规划、行中、记录与分享的城市探索 Agent，也是一次从产品定义、全栈开发到用评测驱动持续优化的完整闭环。</p>
+      </header>
+
+      <div class="feature-stage reveal reveal--media" data-delay="1">
+        <button class="shot shot--landscape tilt-card gallery-trigger" type="button" data-tilt data-tilt-base="0deg" data-gallery="citywalk" data-full="assets/citywalk/web-route-overview.webp" data-caption="CityWalk Pulse 路线决策总览" aria-label="放大查看 CityWalk Pulse 路线决策总览">
+          <img src="assets/citywalk/web-route-overview.webp" alt="CityWalk Pulse 路线决策总览，展示同行、节奏、天气、站点顺序与预算" width="2045" height="924" loading="lazy">
+        </button>
+        <button class="shot shot--support gallery-trigger" type="button" data-gallery="citywalk" data-full="assets/citywalk/web-social-copy.webp" data-caption="CityWalk Pulse 分享文案结果" aria-label="放大查看 CityWalk Pulse 分享文案结果">
+          <img src="assets/citywalk/web-social-copy.webp" alt="CityWalk Pulse 分享文案结果，展示表达风格、完整版与简短版" width="1920" height="1080" loading="lazy">
+        </button>
+      </div>
+
+      <div class="project-story">
+        <article class="story-intro reveal">
+          <p class="story-label">连续产品体验</p>
+          <h3>从“帮我规划路线”，走向一段会持续生长的城市体验。</h3>
+          <p>这是我从零定义并完整实现的项目：产品把偏好输入、路线规划、行走调整和旅程记录串成一条连续体验。Agent 不只生成答案，还需要记住同行人数、预算、时间与体力边界，并在天气或现场变化后重新组织路线——每个环节都被真实运行和评测样例反复校验。</p>
+        </article>
+          <div class="capability-grid reveal stagger-group" data-delay="1">
+          <article><span>01</span><h4>规划</h4><p>把感觉、同行、时间与预算转成可执行路线。</p></article>
+          <article><span>02</span><h4>行中</h4><p>根据天气、体力和现场变化，局部调整剩余路线。</p></article>
+          <article><span>03</span><h4>记录</h4><p>随身上传图文与位置，让走过的片段留在路线里。</p></article>
+          <article><span>04</span><h4>分享</h4><p>基于路线事实和沿途记录生成可编辑的分享表达。</p></article>
+        </div>
+      </div>
+
+      <footer class="project-footer">
+        <div class="project-tags"><span>Agent 产品设计</span><span>多轮记忆</span><span>动态路线</span><span>评测体系</span></div>
+        <a class="case-entry" href="citywalk.html">查看完整案例 <span aria-hidden="true">→</span></a>
+      </footer>
+      <div class="project-meta" aria-label="CityWalk 项目摘要">
+        <span data-meta-stage><b>项目阶段</b> 可运行全栈原型</span>
+        <span data-meta-role><b>我的角色</b> 产品探索与原型</span>
+        <span data-meta-validation><b>验证方式</b> 真实路线 + 全链路评测回归</span>
+      </div>
+    </section>
+
+    <section class="project project--possibilities" id="possibilities" aria-labelledby="possibilities-title" data-section>
+      <div class="project-no" aria-hidden="true">02</div>
+      <header class="project-header reveal">
+        <div>
+          <p class="project-type">职业体验 · AI 角色协作</p>
+          <h2 id="possibilities-title">See All Possibilities</h2>
+        </div>
+        <p class="project-lede">把“了解职业”变成一次可以亲手推进的真实工作体验，回应“我会不会喜欢这份工作”背后那份真实的不安。</p>
+      </header>
+
+      <div class="possibility-stage reveal reveal--media" data-delay="1">
+        <button class="shot shot--desk tilt-card gallery-trigger" type="button" data-tilt data-tilt-base="-0.45deg" data-gallery="possibilities" data-full="assets/possibilities/pm-workspace.webp" data-caption="产品经理体验 · Possibility OS 工作台" aria-label="放大查看产品经理职业体验工作台">
+          <img src="assets/possibilities/pm-workspace.webp" alt="产品经理职业体验的桌面工作台，包含邮件、对话、文档和原型入口" width="1440" height="1039" loading="lazy">
+        </button>
+      </div>
+
+      <div class="project-story project-story--split">
+        <article class="story-intro reveal">
+          <p class="story-label">痛点洞察 × 产品回应</p>
+          <h3>职业选择的痛点，本质是情绪上的不安——先看见它，才能回应它。</h3>
+          <p>项目的起点不是技术，而是一种常被忽视的情绪：面对职业想象时的迷茫与自我怀疑。Mentor 负责追问、解释与反馈；生成器只在用户已经表达想法、做出取舍后，将内容整理成结构化草稿。技术退到幕后，用户始终拥有“我亲手把事情推进了”的成就感。</p>
+        </article>
+        <ol class="possibility-track reveal stagger-group" data-delay="1" aria-label="职业体验推进路径">
+          <li><span>01</span><strong>理解任务</strong><small>从真实邮件与上下文开始</small></li>
+          <li><span>02</span><strong>收集证据</strong><small>在工作台里判断信息可信度</small></li>
+          <li><span>03</span><strong>做出取舍</strong><small>让 Mentor 追问关键分歧</small></li>
+          <li><span>04</span><strong>生成产物</strong><small>把判断整理成可交付草稿</small></li>
+        </ol>
+      </div>
+
+      <footer class="project-footer">
+        <div class="project-tags"><span>职业体验</span><span>AI Mentor</span><span>任务链设计</span><span>结构化产物</span></div>
+        <a class="case-entry" href="possibilities.html">查看完整案例 <span aria-hidden="true">→</span></a>
+      </footer>
+      <div class="project-meta" aria-label="See All Possibilities 项目摘要">
+        <span data-meta-stage><b>项目阶段</b> 职业体验原型</span>
+        <span data-meta-role><b>我的角色</b> 任务链与 Mentor 设计</span>
+        <span data-meta-validation><b>验证方式</b> 结构化交付物</span>
+      </div>
+    </section>
+
+    <section class="project project--drama" id="drama" aria-labelledby="drama-title" data-section>
+      <div class="project-no" aria-hidden="true">03</div>
+      <header class="project-header reveal">
+        <div>
+          <p class="project-type">互动短剧 · Android + AI 内容管线</p>
+          <h2 id="drama-title">Drama</h2>
+        </div>
+        <p class="project-lede">让短剧从“观看内容”变成会回应观众的互动世界——靠的不是单点的模型能力，而是一套可审核、可校准、可运行的内容工程流程。</p>
+      </header>
+
+      <div class="drama-stage reveal reveal--media" data-delay="1">
+        <div class="drama-marquee" aria-hidden="true"><span>你的选择改变故事</span><span>你的选择改变故事</span></div>
+        <div class="drama-phones" aria-label="Drama 真实应用界面">
+          <button class="phone-frame phone-frame--series gallery-trigger" type="button" data-gallery="drama" data-full="assets/drama/real-series-list.png" data-caption="短剧互动 · 剧集发现与正在热映" aria-label="放大查看 Drama 剧集发现界面">
+            <img src="assets/drama/real-series-list.png" alt="Drama Android 客户端的剧集发现界面，展示正在热映的互动短剧与完整海报" width="1080" height="2400" loading="lazy">
+          </button>
+          <button class="phone-frame phone-frame--agent gallery-trigger" type="button" data-gallery="drama" data-full="assets/drama-agent.webp" data-caption="剧情 AI · 基于角色与互动节点回答" aria-label="放大查看剧情 AI 对话界面">
+            <img src="assets/drama-agent.webp" alt="Drama 剧情 AI 对话界面，结合角色立场和互动节点解释剧情" width="1080" height="2400" loading="lazy">
+          </button>
+        </div>
+        <div class="drama-copy">
+          <p class="story-label">观看端 × 内容生产端</p>
+          <h3>每一个高光时刻，都可以成为一次新的参与。</h3>
+          <p>观众可以做选择、和角色对话、点击场景物品或参与高光贴纸。观看端的热闹背后，是生产端的工程秩序：两阶段 AI Pipeline 识别高光、角色和互动节点，语义判断与逐帧执行分层协作，再经人工审批进入配置——不确定的模型输出，由此变成可管理的内容资产。</p>
+        </div>
+      </div>
+
+      <div class="interaction-ledger reveal stagger-group">
+        <article><span>选择</span><h4>选择互动</h4><p>错误选择展示后果，再回溯重选，让分支有张力但不把内容成本无限放大。</p></article>
+        <article><span>对话</span><h4>角色对话</h4><p>暂停剧情后进入流式对话，结合真实角色档案和当前情节控制回答边界。</p></article>
+        <article><span>物品</span><h4>场景热点</h4><p>不打断播放，以短时热点补充叙事信息，降低对观看节奏的干扰。</p></article>
+        <article><span>高光</span><h4>高光贴纸</h4><p>在情绪峰值触发轻量参与，并用参与人数制造共同观看感。</p></article>
+      </div>
+
+      <footer class="project-footer">
+        <div class="project-tags"><span>互动视频</span><span>剧情 Agent</span><span>内容 Pipeline</span><span>运营后台</span></div>
+        <a class="case-entry" href="drama.html">查看完整案例 <span aria-hidden="true">→</span></a>
+      </footer>
+      <div class="project-meta" aria-label="Drama 项目摘要">
+        <span data-meta-stage><b>项目阶段</b> Android 交互原型</span>
+        <span data-meta-role><b>我的角色</b> 互动机制与内容管线</span>
+        <span data-meta-validation><b>验证方式</b> 互动场景 + 生产工作流</span>
+      </div>
+    </section>
+
+    <section class="project project--alexent" id="alexent" aria-labelledby="alexent-title" data-section>
+      <div class="project-no" aria-hidden="true">04</div>
+      <header class="project-header reveal">
+        <div>
+          <p class="project-type">企业智能副驾 · SAP ECM 交付</p>
+          <h2 id="alexent-title">Alexent</h2>
+        </div>
+        <p class="project-lede">沉进 SAP ECM 顾问的交付现场，把迁移知识、项目状态和交付动作放进同一个 AI 工作台。</p>
+      </header>
+
+      <div class="alexent-stage reveal reveal--media" data-delay="1">
+        <button class="shot shot--enterprise tilt-card gallery-trigger" type="button" data-tilt data-tilt-base="0deg" data-gallery="alexent" data-full="assets/alexent-workspace.webp" data-caption="ECM Migration Copilot · 项目工作台" aria-label="放大查看 ECM 项目工作台">
+          <img src="assets/alexent-workspace.webp" alt="Alexent ECM 迁移项目工作台，包含项目阶段、任务和 AI 助手" width="1440" height="1000" loading="lazy">
+        </button>
+      </div>
+
+      <div class="enterprise-story reveal">
+        <div>
+          <p class="story-label">五阶段交付工作流</p>
+          <h3>让知识进入行动，而不是停留在聊天窗口。</h3>
+        </div>
+        <ol aria-label="项目阶段">
+          <li><span>01</span>准备</li><li><span>02</span>设计</li><li><span>03</span>构建</li><li><span>04</span>测试</li><li><span>05</span>上线</li>
+        </ol>
+        <p>设计从顾问真实的交付流程出发，逐环节寻找 AI 能真正接住的位置：项目、任务、会议记录和长期记忆保持在明确的用户与项目范围内；RAG 答案显示来源与审核状态；证据不足时拒绝生成 SAP 专业结论——把“知道边界”也设计成产品能力。</p>
+      </div>
+
+      <footer class="project-footer">
+        <div class="project-tags"><span>企业智能体</span><span>项目生命周期</span><span>RAG 治理</span><span>权限与记忆</span></div>
+        <a class="case-entry" href="alexent.html">查看完整案例 <span aria-hidden="true">→</span></a>
+      </footer>
+      <div class="project-meta" aria-label="Alexent 项目摘要">
+        <span data-meta-stage><b>项目阶段</b> 企业交付 Copilot 原型</span>
+        <span data-meta-role><b>我的角色</b> 工作流与 Agent 机制</span>
+        <span data-meta-validation><b>验证方式</b> 五阶段流程 + 证据边界</span>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title" data-section>
+      <div class="about-heading reveal">
+        <p class="section-kicker">我的产品方法</p>
+        <h2 id="about-title">把模糊问题，<br>推进成可验证的产品。</h2>
+      </div>
+      <ol class="principles reveal stagger-group" data-delay="1">
+        <li><span>01</span><p>从真实场景与约束出发</p></li>
+        <li><span>02</span><p>把复杂系统拆成可体验的关键路径</p></li>
+        <li><span>03</span><p>用 AI 加速表达、生成与协作，但保留人的关键判断</p></li>
+        <li><span>04</span><p>通过评测、反馈或任务闭环验证产品假设</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact" data-section>
+    <div class="footer-orbit" aria-hidden="true"></div>
+    <p class="section-kicker">继续讨论产品</p>
+    <h2>把问题落到体验里，<br>让判断在使用中继续生长。</h2>
+    <p class="footer-role">从真实场景出发，把结构、交互和验证放到同一张桌面上。</p>
+    <div class="contact-row">
+      <a id="email-address" href="mailto:3407749043@qq.com">3407749043@qq.com <span aria-hidden="true">↗</span></a>
+      <button type="button" data-copy-email data-email="3407749043@qq.com">复制邮箱</button>
+    </div>
+  </footer>
+
+  <div id="image-dialog" class="image-dialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="dialog-caption">
+    <div class="dialog-backdrop" data-dialog-close></div>
+    <div class="dialog-panel">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="关闭大图">×</button>
+      <button class="dialog-nav dialog-nav--prev" type="button" data-dialog-prev aria-label="上一张图片">←</button>
+      <figure>
+        <img src="assets/citywalk-home.webp" alt="">
+        <figcaption id="dialog-caption"></figcaption>
+      </figure>
+      <button class="dialog-nav dialog-nav--next" type="button" data-dialog-next aria-label="下一张图片">→</button>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+</body>
+</html>
+

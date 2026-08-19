@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘子豪的 Alexent 项目案例：把 SAP ECM 迁移知识、项目状态和交付动作放进同一个 AI 工作台。">
+  <meta name="theme-color" content="#f3eee4">
+  <title>Alexent｜刘子豪产品作品集</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="alexent.css">
+  <link rel="stylesheet" href="threads.css">
+  <link rel="stylesheet" href="target-cursor.css">
+  <link rel="stylesheet" href="gooey-nav.css">
+  <script src="gsap.min.js" defer></script>
+  <script src="target-cursor.js" defer></script>
+  <script src="alexent.js" defer></script>
+  <script src="gooey-nav.js" defer></script>
+  <script src="threads.js" defer></script>
+</head>
+<body class="case-page alexent-page">
+  <a class="skip-link" href="#case-main">跳到案例正文</a>
+
+  <header class="case-header" data-case-header>
+    <div class="case-header__inner">
+      <a class="case-back" href="index.html#alexent" aria-label="返回作品集中的 Alexent 项目">← 返回全部项目</a>
+      <a class="case-wordmark" href="#top">刘子豪 · 产品经理作品集</a>
+      <span class="case-progress" data-case-progress aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <nav class="case-chapters" aria-label="Alexent 项目章节" data-gooey-nav>
+    <a href="#top" data-chapter-link>命题</a>
+    <a href="#gaps" data-chapter-link>断点</a>
+    <a href="#workflow" data-chapter-link>工作流</a>
+    <a href="#knowledge" data-chapter-link>知识治理</a>
+    <a href="#memory" data-chapter-link>记忆与权限</a>
+    <a href="#agent" data-chapter-link>Agent</a>
+    <a href="#takeaway" data-chapter-link>判断</a>
+  </nav>
+
+  <main id="case-main">
+    <section class="case-intro alexent-hero" id="top" data-case-section data-threads aria-labelledby="case-title">
+      <div class="case-shell alexent-hero__grid">
+        <div class="alexent-hero__copy">
+          <p class="case-kicker">Alexent · 企业智能副驾（SAP ECM 迁移交付）</p>
+          <h1 id="case-title">把迁移知识、项目状态和交付动作，放进同一个 AI 工作台</h1>
+          <p class="case-lede">Alexent 是一个面向 SAP ECM 迁移交付团队的本地优先工作台：五阶段项目流、任务与会议、长期记忆和带来源标注的知识检索，收敛在同一个 React + FastAPI 应用里。它探索的核心，是企业场景里的 Agent 如何做到每一条答案都有证据、每一次记忆都有边界。</p>
+
+          <dl class="case-facts">
+            <div><dt>我的角色</dt><dd>个人主导 · 工作流与 Agent 机制设计、全栈实现</dd></div>
+            <div><dt>前端</dt><dd>React 18 · Ant Design 5 · Vite</dd></div>
+            <div><dt>后端</dt><dd>FastAPI · LangGraph · Chroma · SQLite</dd></div>
+          </dl>
+
+          <ol class="hero-capabilities" aria-label="项目核心能力">
+            <li><span>01</span><strong>归拢</strong><p>项目、任务、会议、知识进入一个工作区</p></li>
+            <li><span>02</span><strong>举证</strong><p>每条答案标注来源、章节与审核状态</p></li>
+            <li><span>03</span><strong>克制</strong><p>证据不足时拒绝生成 SAP 专业结论</p></li>
+          </ol>
+        </div>
+
+        <figure class="alexent-shot case-reveal">
+          <button type="button" data-gallery-trigger data-full="assets/alexent-workspace.webp" data-caption="ECM Migration Copilot · 项目工作台" aria-label="放大查看 ECM 项目工作台">
+            <img src="assets/alexent-workspace.webp" alt="Alexent ECM 迁移项目工作台，包含项目阶段、任务和 AI 助手" width="1440" height="1000" loading="eager" fetchpriority="high" decoding="async">
+          </button>
+          <figcaption>项目工作台：左侧项目列表，中间阶段与任务看板，右侧 Agent 对话与快捷动作。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section" id="gaps" data-case-section aria-labelledby="gaps-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">断点 · 为什么通用聊天不够</p>
+          <h2 id="gaps-title">ECM 迁移交付里，知识和动作之间断成了四截</h2>
+          <p>迁移顾问的日常工作横跨文档库、项目表格、会议纪要和聊天工具。把通用 AI 聊天直接放进来，并不能把这些断点接上——它不知道项目走到哪一阶段，也不敢为答案负责。</p>
+        </header>
+
+        <div class="gap-grid">
+          <article class="gap-card case-reveal"><span>断点 01</span><h3>知识躺着不动</h3><p>ArchiveLink、DMS 的迁移 runbook 和 SAP Note 沉在文档库里，顾问靠个人记忆和搜索经验把它们翻出来。</p></article>
+          <article class="gap-card case-reveal"><span>断点 02</span><h3>状态散在多处</h3><p>阶段进度、任务分配、会议结论各自存放，AI 看不到"当前事实"，给出的建议常常停留在上一个版本。</p></article>
+          <article class="gap-card case-reveal"><span>断点 03</span><h3>答案不敢引用</h3><p>通用聊天不带来源、不带审核状态。在客户面前，没有证据链的 SAP 结论无法被直接使用。</p></article>
+          <article class="gap-card case-reveal"><span>断点 04</span><h3>记忆没有边界</h3><p>跨项目、跨成员的对话内容如果没有作用域隔离，企业数据就有串扰和泄露的风险。</p></article>
+        </div>
+
+        <div class="gap-chain case-reveal" aria-label="从知识到行动的断裂链路">
+          <div><small>知识位置</small><strong>文档库 / SAP Note</strong></div>
+          <i aria-hidden="true">⇢</i>
+          <div><small>传递方式</small><strong>顾问个人记忆</strong></div>
+          <i aria-hidden="true">⇢</i>
+          <div><small>使用现场</small><strong>通用聊天窗口</strong></div>
+          <i aria-hidden="true">⇢</i>
+          <div><small>最终结果</small><strong>客户面前不敢用</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="workflow" data-case-section aria-labelledby="workflow-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">工作流 · 五阶段交付骨架</p>
+          <h2 id="workflow-title">先给交付一个骨架，再让 AI 长在骨架上</h2>
+          <p>工作台把 ECM 迁移拆成准备、设计、构建、测试、上线五个阶段。阶段流转由角色权限控制——项目经理确认后才推进；任务看板与会议日志挂在项目下，DOCX、XLSX 可以导入解析，也可以一键导出交付物。</p>
+        </header>
+
+        <div class="phase-flow case-reveal" data-phase-flow>
+          <div class="phase-tabs" role="tablist" aria-label="五个交付阶段">
+            <button type="button" role="tab" id="phase-tab-prepare" aria-controls="phase-panel-prepare" aria-selected="true" data-phase-tab="prepare"><span>01</span>准备</button>
+            <button type="button" role="tab" id="phase-tab-design" aria-controls="phase-panel-design" aria-selected="false" data-phase-tab="design" tabindex="-1"><span>02</span>设计</button>
+            <button type="button" role="tab" id="phase-tab-build" aria-controls="phase-panel-build" aria-selected="false" data-phase-tab="build" tabindex="-1"><span>03</span>构建</button>
+            <button type="button" role="tab" id="phase-tab-test" aria-controls="phase-panel-test" aria-selected="false" data-phase-tab="test" tabindex="-1"><span>04</span>测试</button>
+            <button type="button" role="tab" id="phase-tab-golive" aria-controls="phase-panel-golive" aria-selected="false" data-phase-tab="golive" tabindex="-1"><span>05</span>上线</button>
+          </div>
+
+          <div class="phase-panels">
+            <article class="phase-panel is-active" id="phase-panel-prepare" role="tabpanel" aria-labelledby="phase-tab-prepare" data-phase-panel="prepare">
+              <div><small>阶段目标</small><h3>摸清家底</h3><p>确认源系统与目标系统、涉及的文档技术（ARL / GOS / DMS / BDS）与迁移范围，把项目名册和角色职责一次性定义清楚。</p></div>
+              <div><small>AI 在这里做什么</small><p>根据项目档案生成准备阶段任务清单；从会议纪要中抽取决议与待办；回答"这类技术组合通常要查哪些 Note"。</p></div>
+              <div><small>沉淀的交付物</small><p>项目档案 · 团队名册 · 准备阶段任务板 · 会议纪要解析记录</p></div>
+            </article>
+            <article class="phase-panel" id="phase-panel-design" role="tabpanel" aria-labelledby="phase-tab-design" data-phase-panel="design" hidden>
+              <div><small>阶段目标</small><h3>定方案</h3><p>为每一类文档技术确定迁移策略、目标仓库映射与校验口径，形成可评审的迁移设计。</p></div>
+              <div><small>AI 在这里做什么</small><p>基于已审核的 Knowledge Pack 给出策略候选并标注出处；把设计决策写入长期记忆，后续对话自动带上这些约束。</p></div>
+              <div><small>沉淀的交付物</small><p>迁移策略草案 · 技术映射表 · 经确认的设计决策记忆</p></div>
+            </article>
+            <article class="phase-panel" id="phase-panel-build" role="tabpanel" aria-labelledby="phase-tab-build" data-phase-panel="build" hidden>
+              <div><small>阶段目标</small><h3>跑通迁移</h3><p>配置迁移程序与内容仓库连接，在小样本上跑通端到端迁移链路。</p></div>
+              <div><small>AI 在这里做什么</small><p>回答具体报错与配置问题——答案附来源章节与审核状态；证据不足时明确拒绝生成 SAP 专业结论，而不是编一个看似合理的配置。</p></div>
+              <div><small>沉淀的交付物</small><p>配置检查清单 · 问题排查记录 · 样本迁移结果</p></div>
+            </article>
+            <article class="phase-panel" id="phase-panel-test" role="tabpanel" aria-labelledby="phase-tab-test" data-phase-panel="test" hidden>
+              <div><small>阶段目标</small><h3>验证口径</h3><p>按设计阶段定下的校验口径核对数量、可读性与链接完整性，让业务部门签字确认。</p></div>
+              <div><small>AI 在这里做什么</small><p>把测试会议中的问题逐条抽成任务并指派；追踪每个缺陷的状态，保证测试结论可追溯。</p></div>
+              <div><small>沉淀的交付物</small><p>校验报告 · 缺陷任务列表 · 签字确认的会议结论</p></div>
+            </article>
+            <article class="phase-panel" id="phase-panel-golive" role="tabpanel" aria-labelledby="phase-tab-golive" data-phase-panel="golive" hidden>
+              <div><small>阶段目标</small><h3>平稳切换</h3><p>执行切换窗口、回退预案与上线后观察期安排，把项目交付给运维。</p></div>
+              <div><small>AI 在这里做什么</small><p>汇总整个项目的已确认决策与教训，生成上线检查单与交接摘要，导出为可归档的 DOCX / XLSX。</p></div>
+              <div><small>沉淀的交付物</small><p>上线检查单 · 交接摘要 · 项目经验记忆库</p></div>
+            </article>
+          </div>
+
+          <p class="phase-note">阶段推进是角色感知的：流转动作由服务端按项目角色校验，普通成员无法越权改阶段——AI 也一样，只能通过同一套受权限约束的工具来操作。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="knowledge" data-case-section aria-labelledby="knowledge-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">知识治理 · 让答案敢被引用</p>
+          <h2 id="knowledge-title">每条 RAG 答案，都带着来源、章节和审核状态</h2>
+          <p>知识以 Knowledge Pack 的形式进入系统：Markdown 按章节切块存入 Chroma，frontmatter 声明负责人与审核状态。检索有距离阈值兜底，答案永远把证据摆在结论旁边。</p>
+        </header>
+
+        <div class="knowledge-layout">
+          <div class="knowledge-pack case-reveal">
+            <p class="case-eyebrow">Knowledge Pack · frontmatter</p>
+            <pre><code>---
+title: ArchiveLink migration runbook
+technology: ARL
+status: reviewed
+owner: ECM CoE
+reviewed_at: 2026-08-03
+---</code></pre>
+            <p class="knowledge-pack__note">环境用 <code>RAG_ALLOWED_STATUSES</code> 定义可引用的状态集合；本地接受 <code>unreviewed / reviewed / approved</code>，客户环境可以收紧到只剩后两者。</p>
+          </div>
+
+          <div class="knowledge-pipeline case-reveal" aria-label="知识从进入到引用的治理流水线">
+            <div><small>进入</small><strong>章节级切块</strong><p>按 Markdown 结构切分，保留文件与章节定位</p></div>
+            <i aria-hidden="true">→</i>
+            <div><small>过滤</small><strong>状态 + 距离阈值</strong><p><code>RAG_MAX_DISTANCE</code> 之外的结果直接弃用</p></div>
+            <i aria-hidden="true">→</i>
+            <div><small>生成</small><strong>证据优先</strong><p>无相关证据时对 SAP 专业问题 fail-closed</p></div>
+            <i aria-hidden="true">→</i>
+            <div><small>呈现</small><strong>标注在答案旁</strong><p>来源文件 · 章节 · 审核状态随答案一起显示</p></div>
+          </div>
+        </div>
+
+        <div class="answer-contract case-reveal">
+          <div class="answer-contract__example">
+            <p class="case-eyebrow">正常回答</p>
+            <h3>结论旁边永远有证据</h3>
+            <p>「ARL 迁移前建议先核对内容仓库证书有效期」——来源：arl.md · 迁移前检查章节 · 状态 reviewed。顾问可以顺着标注回到原文核对。</p>
+          </div>
+          <div class="answer-contract__refusal">
+            <p class="case-eyebrow">证据不足</p>
+            <h3>拒绝，也是一种正确回答</h3>
+            <p>当检索不到足够相关且合规的知识时，系统明确说明"当前证据不足以给出 SAP 专业结论"，并建议补充或审核对应 Knowledge Pack——把不知道也说成产品能力。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="memory" data-case-section aria-labelledby="memory-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">记忆与权限 · 边界先于智能</p>
+          <h2 id="memory-title">每一次记忆都有作用域，每一次改写都有审计</h2>
+          <p>企业场景里，"记住"本身是风险动作。Alexent 把状态、对话和长期记忆拆成三层，各自有明确的作用域与覆盖规则。</p>
+        </header>
+
+        <div class="memory-grid">
+          <article class="memory-card case-reveal"><span>第 1 层</span><h3>实时项目状态</h3><p>阶段、任务、会议记录存放在 SQLite 专属表中。实时字段永远覆盖回忆文本——模型看到的是当前事实，不是聊天记录里的旧版本。</p></article>
+          <article class="memory-card case-reveal"><span>第 2 层</span><h3>作用域对话</h3><p>消息按 <code>用户 + 项目 + 会话</code> 精确隔离持久化。模型只拿到有界的最近窗口；会议文件解析走独立会话，文档里的隐藏文本不会污染可见对话。</p></article>
+          <article class="memory-card case-reveal"><span>第 3 层</span><h3>审计长期记忆</h3><p>只有经确认的决定、约束、偏好、事实与教训才进入长期记忆。重复写入返回 NONE；替换与删除产生带历史保留的 UPDATE / DELETE 审计事件。</p></article>
+        </div>
+
+        <div class="memory-scope case-reveal">
+          <figure class="alexent-shot alexent-shot--login">
+            <button type="button" data-gallery-trigger data-full="assets/alexent-login.webp" data-caption="Alexent · 本地演示登录" aria-label="放大查看 Alexent 登录界面">
+              <img src="assets/alexent-login.webp" alt="Alexent 本地演示登录界面，选择账号进入工作区" width="1440" height="1000" loading="lazy" decoding="async">
+            </button>
+            <figcaption>本地演示登录：签名会话 + 服务端项目与角色校验；共享部署前应替换为企业 OIDC / IAS。</figcaption>
+          </figure>
+          <div class="memory-scope__copy">
+            <p class="case-eyebrow">作用域规则</p>
+            <h3>项目事实共享，个人偏好私有，谁也不越界</h3>
+            <ul>
+              <li><strong>项目事实</strong>经确认后共享给有授权的项目成员，跨项目不可见。</li>
+              <li><strong>全局偏好</strong>始终用户私有，不会流进其他身份或其他项目。</li>
+              <li><strong>权限校验</strong>在服务端完成，前端隐藏入口不等于权限。</li>
+              <li><strong>记忆管理</strong>提供查询、历史回溯与删除接口，记忆不是黑盒。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="agent" data-case-section aria-labelledby="agent-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">Agent · 工具化而非自由发挥</p>
+          <h2 id="agent-title">LangGraph 驱动的 ReAct Agent，只能走受权限约束的工具</h2>
+          <p>Agent 通过 LiteLLM 兼容端点接入模型，以 ReAct 模式调用工具。它能做的每一件事——查任务、改阶段、写记忆、检索知识——都经过与界面同一套权限与审计通道。</p>
+        </header>
+
+        <div class="agent-grid">
+          <article class="agent-group case-reveal"><span>工具组 A</span><h3>生命周期工具</h3><p>读取项目档案、查询与更新任务、登记会议纪要、按角色校验后推进阶段。AI 对项目状态的所有读写都落在审计范围内。</p></article>
+          <article class="agent-group case-reveal"><span>工具组 B</span><h3>知识与记忆工具</h3><p>检索受治理的 Knowledge Pack，按作用域读写长期记忆。证据不足时，工具层直接返回"无合规证据"，而不是让模型硬答。</p></article>
+          <article class="agent-group case-reveal"><span>工具组 C</span><h3>交付物工具</h3><p>解析上传的 DOCX / XLSX（大小受限、独立会话），把检查单、交接摘要等导出为可归档文件——让对话结果变成交付物。</p></article>
+        </div>
+
+        <div class="agent-flow case-reveal" aria-label="一次 Agent 调用的路径">
+          <span>用户提问</span><i aria-hidden="true">→</i><span>ReAct 规划</span><i aria-hidden="true">→</i><span>工具调用（权限校验）</span><i aria-hidden="true">→</i><span>证据 / 状态回读</span><i aria-hidden="true">→</i><span>带标注的回答</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="takeaway" data-case-section aria-labelledby="takeaway-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">判断 · 这个项目教会我的</p>
+          <h2 id="takeaway-title">企业级 Agent 的可信度，是设计出来的</h2>
+        </header>
+
+        <div class="takeaway-grid">
+          <article class="case-reveal"><span>01</span><h3>状态先于对话</h3><p>让 AI 读写结构化的项目状态，而不是让它从聊天记录里猜。实时字段覆盖回忆文本，事实只有一个来源。</p></article>
+          <article class="case-reveal"><span>02</span><h3>证据是界面的一部分</h3><p>来源、章节、审核状态不该藏在日志里，而要显示在答案旁边——用户能不能核对，决定了答案能不能被用。</p></article>
+          <article class="case-reveal"><span>03</span><h3>失败要有默认方向</h3><p>检索阈值、状态白名单、fail-closed 生成：每个不确定的环节都要事先决定"往哪边倒"，而不是交给模型自由发挥。</p></article>
+        </div>
+
+        <blockquote class="closing-learning case-reveal">
+          <p>这次实践让我更确信：企业 Agent 的可信度不来自更强的模型，而来自作用域、证据链和审计——把"知道边界"本身设计成产品能力。</p>
+          <footer>刘子豪 · 产品经理方向</footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <div class="case-shell">
+      <p>Alexent · 刘子豪产品作品集</p>
+      <div>
+        <a href="index.html#alexent">返回项目总览</a>
+        <a href="drama.html">查看 Drama 案例 →</a>
+        <a href="mailto:3407749043@qq.com">3407749043@qq.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="case-dialog" id="case-image-dialog" aria-label="界面图片查看器">
+    <button class="case-dialog__backdrop" type="button" data-dialog-close aria-label="关闭图片查看器"></button>
+    <div class="case-dialog__panel">
+      <div class="case-dialog__toolbar">
+        <span>完整界面</span>
+        <button type="button" data-dialog-close aria-label="关闭图片查看器">关闭</button>
+      </div>
+      <figure>
+        <img src="assets/alexent-workspace.webp" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+  </dialog>
+</body>
+</html>

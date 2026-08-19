@@ -1,0 +1,486 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘子豪的 CityWalk Pulse 产品案例：一个贯穿规划、行中、记录与分享，并由长期记忆和评测系统支撑的城市探索 Agent。">
+  <meta name="theme-color" content="#f3eee4">
+  <title>CityWalk Pulse｜刘子豪产品作品集</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="citywalk.css">
+  <link rel="stylesheet" href="ripple-grid.css">
+  <link rel="stylesheet" href="target-cursor.css">
+  <link rel="stylesheet" href="gooey-nav.css">
+  <script src="gsap.min.js" defer></script>
+  <script src="target-cursor.js" defer></script>
+  <script src="citywalk.js" defer></script>
+  <script src="gooey-nav.js" defer></script>
+  <script src="ripple-grid.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#case-main">跳到案例正文</a>
+
+  <header class="case-header" data-case-header>
+    <div class="case-header__inner">
+      <a class="case-back" href="index.html#citywalk" aria-label="返回作品集中的 CityWalk 项目">← 返回全部项目</a>
+      <a class="case-wordmark" href="#case-main">刘子豪 · 产品经理作品集</a>
+      <span class="case-progress" data-case-progress aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <nav class="case-chapters" aria-label="CityWalk 章节" data-gooey-nav>
+    <a href="#opportunity" data-chapter-link>机会</a>
+    <a href="#planning" data-chapter-link>规划</a>
+    <a href="#walking" data-chapter-link>行中</a>
+    <a href="#record" data-chapter-link>记录</a>
+    <a href="#sharing" data-chapter-link>分享</a>
+    <a href="#memory" data-chapter-link>记忆</a>
+    <a href="#evaluation" data-chapter-link>评测</a>
+    <a href="#boundaries" data-chapter-link>边界</a>
+  </nav>
+
+  <main id="case-main">
+    <section class="case-intro" data-ripple-grid aria-labelledby="case-title">
+      <div class="case-shell">
+        <p class="case-kicker">CityWalk Pulse · 产品案例</p>
+        <h1 id="case-title" class="case-reveal case-reveal--hero">一个贯穿规划、行中、记录与分享的城市探索 Agent</h1>
+        <p class="case-lede">CityWalk Pulse 让同一个 Agent 携带路线状态与真实事实，连接 Web 端规划、移动端执行、途中图文记录和结束后的内容表达；真实完成与反馈随后进入记忆，继续影响下一次规划。</p>
+
+        <dl class="case-facts case-reveal" aria-label="项目概况">
+          <div><dt>产品阶段</dt><dd>可运行的高保真全栈原型</dd></div>
+          <div><dt>我的角色</dt><dd>个人主导产品探索与全栈原型</dd></div>
+          <div><dt>产品形态</dt><dd>Web + 原生 Android + Agent 后端</dd></div>
+        </dl>
+
+        <div class="intro-thesis case-reveal" aria-label="项目核心闭环">
+          <p>核心闭环</p>
+          <ol>
+            <li><span>01</span>表达感觉，生成路线</li>
+            <li><span>02</span>执行路线，随时调整</li>
+            <li><span>03</span>留下图文，整理记录</li>
+            <li><span>04</span>选择表达风格，生成分享</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-opportunity" id="opportunity" data-case-section aria-labelledby="opportunity-title">
+      <div class="case-shell case-shell--split">
+        <header class="case-heading case-reveal">
+          <p class="case-kicker">01 · 机会</p>
+          <h2 id="opportunity-title">人们想要的不是更多景点，而是一段属于此刻的城市体验</h2>
+          <p>CityWalk 以感受为目标、以真实空间为约束。用户说的是“轻松、有历史感、想慢慢逛”，产品要回答的却是：去哪、怎么串联、现在是否适合出发，以及计划改变后什么仍然成立。</p>
+        </header>
+
+        <div class="conflict-grid" aria-label="三组核心冲突">
+          <article class="case-reveal">
+            <span>01</span>
+            <h3>模糊感受 × 精确行动</h3>
+            <p>开放式审美不能被几个固定标签耗尽，但最终必须落到可导航的地点、距离与停留节奏。</p>
+          </article>
+          <article class="case-reveal">
+            <span>02</span>
+            <h3>理想路线 × 现场变化</h3>
+            <p>下雨、疲惫或偏航会让静态计划失效；产品需要保留已经发生的旅程，只重算剩余部分。</p>
+          </article>
+          <article class="case-reveal">
+            <span>03</span>
+            <h3>一次建议 × 长期理解</h3>
+            <p>生成、收藏与真实完成是不同强度的证据。记忆如果没有门槛，推荐会被自己的输出反向污染。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-planning" id="planning" data-case-section data-motion-section aria-labelledby="planning-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">02 · 规划</p>
+          <h2 id="planning-title">把一句感觉，翻译成一条可以出发的路线</h2>
+          <p>路线结果由一张可快速检查的决策界面组织：先看总览，再下钻每一站，最后交给地图核对空间事实。</p>
+        </header>
+
+        <blockquote class="case-prompt">
+          <p>“周六下午在上海，两位朋友从陕西南路地铁站出发，想看历史建筑、逛书店，中途安排一家室内咖啡馆休息，节奏轻松，控制在三小时内。”</p>
+          <footer>一段自然表达同时包含地点、同行者、兴趣、节奏、休息方式与时间上限</footer>
+        </blockquote>
+
+        <div class="planning-layer planning-layer--overview case-reveal motion-step" data-motion-step="overview">
+          <div class="layer-copy">
+            <p class="case-eyebrow">第一层 · 决策总览</p>
+            <h3>先让用户判断：这条路线现在能不能走</h3>
+            <p>同一屏呈现城市、起终点、同行关系、交通与停留耗时、预算、天气风险和站点顺序。真实运行结果为 3 小时、预计 ¥106；70% 降雨风险触发室内优先与备选交通提醒。</p>
+            <dl class="decision-grid">
+              <div><dt>城市与起终点</dt><dd>上海 · 陕西南路地铁站 → 上海交响音乐博物馆</dd></div>
+              <div><dt>同行与节奏</dt><dd>两位朋友 · 轻松 · 中途需要休息</dd></div>
+              <div><dt>交通 / 停留</dt><dd>移动 1 小时 4 分钟 · 三站停留</dd></div>
+              <div><dt>总时长 / 预算</dt><dd>3 小时 · ¥106</dd></div>
+              <div><dt>天气</dt><dd>70% 降雨风险 · 优先室内</dd></div>
+              <div><dt>站点顺序</dt><dd>韬奋西文书局 → OFB 咖啡馆 → 音乐博物馆</dd></div>
+            </dl>
+          </div>
+          <figure class="case-figure case-figure--stage">
+            <button class="case-shot" type="button" data-case-gallery="planning" data-full="assets/citywalk/web-route-overview.webp" data-caption="从约束输入到可核对的路线决策总览" aria-label="放大查看路线决策总览">
+              <img src="assets/citywalk/web-route-overview.webp" alt="CityWalk Pulse 完整路线决策总览，包含三小时、106 元、三站顺序、天气提醒与约束取舍" width="2045" height="924" loading="lazy">
+            </button>
+          </figure>
+        </div>
+
+        <div class="planning-layer planning-layer--details planning-layer--reverse case-reveal motion-step" data-motion-step="details">
+          <div class="layer-copy">
+            <p class="case-eyebrow">第二层 · 逐站方案</p>
+            <h3>每一站都说明为什么去、怎么去、要付出什么</h3>
+            <p>Agent 将每一站展开为同一信息结构，避免推荐理由和执行信息彼此割裂。用户可以继续核对交通方式、距离、时间、推荐理由、风格标签、地址、评分、停留、费用、预约和来源。</p>
+            <ul class="detail-checklist">
+              <li><strong>交通</strong><span>公交地铁 / 步行、分段距离与时间</span></li>
+              <li><strong>选择</strong><span>推荐理由、体验标签与风格匹配</span></li>
+              <li><strong>事实</strong><span>地址、评分、距起点距离与建议停留</span></li>
+              <li><strong>成本</strong><span>费用说明、预约条件与公开来源</span></li>
+            </ul>
+          </div>
+          <figure class="case-figure case-figure--stage">
+            <button class="case-shot" type="button" data-case-gallery="planning" data-full="assets/citywalk/web-route-stop-detail-all.webp" data-caption="三站完整展开交通、推荐理由、现实成本与预约条件" aria-label="放大查看三站路线详情">
+              <img src="assets/citywalk/web-route-stop-detail-all.webp" alt="CityWalk Pulse 完整三站路线详情，展示每段交通、推荐理由、标签、地址、评分、费用和预约" width="2055" height="1405" loading="lazy">
+            </button>
+            <figcaption>三站详情将交通、推荐理由、费用与预约条件放在同一张决策界面里。</figcaption>
+          </figure>
+        </div>
+
+        <div class="planning-layer planning-layer--map case-reveal motion-step" data-motion-step="map">
+          <div class="layer-copy">
+            <p class="case-eyebrow">第三层 · 事实校验</p>
+            <h3>Agent 负责理解与排序，地图负责核对事实</h3>
+            <p>模型可以理解开放式感受、编译搜索提示与解释排序，但地点名、坐标、地址、距离和路径必须回到地图。网页发现只作为线索，只有再次匹配到地图 POI 的候选才进入路线。</p>
+            <div class="responsibility-pair">
+              <article><span>Agent</span><p>约束理解 · 候选排序 · 风格解释 · 冲突提示</p></article>
+              <article><span>地图</span><p>地点存在 · 坐标地址 · 空间顺序 · 分段距离</p></article>
+            </div>
+          </div>
+          <figure class="case-figure case-figure--stage">
+            <button class="case-shot" type="button" data-case-gallery="planning" data-full="assets/citywalk/web-route-map-all.webp" data-caption="编号站点、空间顺序与分段路线最终回到地图核验" aria-label="放大查看完整路线地图">
+              <img src="assets/citywalk/web-route-map-all.webp" alt="CityWalk Pulse 完整路线地图，展示上海陕西南路周边编号站点、路径和分段距离" width="2055" height="660" loading="lazy">
+            </button>
+            <figcaption>地图承接站点顺序、节点与分段距离，让路线回到空间事实。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-walking" id="walking" data-case-section aria-labelledby="walking-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">03 · 行中</p>
+          <h2 id="walking-title">真正的路线，从出发后才开始变化</h2>
+          <p>行中体验同时处理两件事：路线随现场变化，旅程片段也能被快速留下。动态改路保障继续执行，随身记录为下一章提供图文、时间与位置。</p>
+        </header>
+
+        <div class="walking-decisions">
+          <article class="walk-decision case-reveal">
+            <p class="case-eyebrow">动态改路</p>
+            <h3>修改剩余旅程，不抹掉已经发生的旅程</h3>
+            <ol class="patch-flow">
+              <li><span>锁定</span><p>固定已完成站点、当前位置与既有轨迹</p></li>
+              <li><span>局部 Patch</span><p>只替换剩余站点，继续继承同行者与硬约束</p></li>
+              <li><span>再核算</span><p>更新距离、时长与预算，并保留撤销入口</p></li>
+            </ol>
+          </article>
+          <article class="walk-decision walk-decision--record case-reveal">
+            <p class="case-eyebrow">随身记录</p>
+            <h3>在最少操作里，留下此刻和位置</h3>
+            <ul>
+              <li>拍照或上传多张图片</li>
+              <li>输入一段当下文字</li>
+              <li>自动关联当前位置或当前站点</li>
+              <li>保存为沿途图钉</li>
+              <li>完成后同步到 Web 记录</li>
+            </ul>
+          </article>
+        </div>
+
+        <figure class="case-figure case-figure--cinema case-reveal">
+          <button class="case-shot" type="button" data-case-gallery="walking" data-full="assets/citywalk/web-walk-recorder.webp" data-caption="行中调整与随身记录共用同一份路线状态" aria-label="放大查看随身记录界面">
+            <img src="assets/citywalk/web-walk-recorder.webp" alt="CityWalk Pulse 随身记录界面，包含路线状态、拍照上传、文字、位置标签与沿途图钉" width="1280" height="720" loading="lazy">
+          </button>
+          <figcaption><strong>一边走，一边把路线变成自己的经历。</strong><span>上传入口、文字、位置与图钉围绕当前漫步会话组织，结束后进入记录整理。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section case-journal" id="record" data-case-section data-motion-section aria-labelledby="record-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--display case-reveal">
+          <p class="case-kicker">04 · 记录</p>
+          <h2 id="record-title">把沿途片段，整理成一份可以继续编辑的城市记录</h2>
+          <p>沿途图钉承接照片、文字、时间与位置。用户可以保留原始片段，也可以选择用 AI 重新表达某个场景，再按行走顺序整理为可翻阅、可继续编辑的记录。</p>
+        </header>
+
+        <div class="journal-arc" aria-label="城市记录整理链路">
+          <div><span>01</span><strong>原始片段</strong><p>照片、文字、时间与位置独立保存</p></div>
+          <div><span>02</span><strong>场景蒸馏</strong><p>视觉分析与 Seedream 生成可选版本</p></div>
+          <div><span>03</span><strong>版本切换</strong><p>原图与 AI 版本分层，文字仍可编辑</p></div>
+          <div><span>04</span><strong>沿路线成册</strong><p>按图钉顺序组织为可翻阅跨页</p></div>
+        </div>
+
+        <div class="journal-transform case-reveal motion-step" data-motion-step="source-to-distilled">
+          <figure class="case-figure">
+            <button class="case-shot" type="button" data-case-gallery="journal-source" data-full="assets/citywalk/journal-input.webp" data-caption="原始照片与时间、位置、文字共同构成记录素材" aria-label="放大查看原始街景照片">
+              <img src="assets/citywalk/journal-input.webp" alt="上海新永安路街景照片，旧式住宅延伸向远处高楼" width="1800" height="1126" loading="lazy">
+            </button>
+            <figcaption><strong>原始素材持续保留</strong><span>照片与对应的时间、位置和文字共同构成本次记录的事实源。</span></figcaption>
+          </figure>
+          <span class="journal-transform__arrow" aria-hidden="true">→</span>
+          <figure class="case-figure">
+            <button class="case-shot" type="button" data-case-gallery="journal-source" data-full="assets/citywalk/journal-distilled.webp" data-caption="场景蒸馏提取旧街与天际线的视觉锚点" aria-label="放大查看场景蒸馏版本">
+              <img src="assets/citywalk/journal-distilled.webp" alt="由 CityWalk Pulse 生成的上海旧街场景蒸馏插画" width="1800" height="1080" loading="lazy">
+            </button>
+            <figcaption><strong>AI 是可选择的再表达</strong><span>提取窗格、晾衣架与天际线，同时与原图分开保存。</span></figcaption>
+          </figure>
+        </div>
+
+        <figure class="case-figure case-figure--cinema case-reveal">
+          <button class="case-shot" type="button" data-case-gallery="journal-product" data-full="assets/citywalk/web-journal-editor.webp" data-caption="编辑器支持原图与场景蒸馏版本切换，文字与跨页可继续调整" aria-label="放大查看记录编辑界面">
+            <img src="assets/citywalk/web-journal-editor.webp" alt="CityWalk Pulse 城市记录编辑界面，包含沿途素材、场景蒸馏和原图版本切换" width="1280" height="720" loading="lazy">
+          </button>
+          <figcaption><strong>生成之后，决定权仍在用户手里。</strong><span>可切回原图、重新生成、继续编辑文字，也可以调整跨页关系。</span></figcaption>
+        </figure>
+
+        <figure class="case-figure case-figure--cinema case-figure--spread case-reveal motion-step" data-motion-step="spread">
+          <button class="case-shot" type="button" data-case-gallery="journal-product" data-full="assets/citywalk/web-journal-spread.webp" data-caption="沿行走顺序，把图钉片段组织成最终记录跨页" aria-label="放大查看记录跨页">
+            <img src="assets/citywalk/web-journal-spread.webp" alt="CityWalk Pulse 城市记录跨页，左页为场景蒸馏图，右页为沿途文字" width="1280" height="720" loading="lazy">
+          </button>
+          <figcaption><strong>路线顺序成为记录的叙事骨架。</strong><span>照片与文字沿图钉重新组织，形成可以继续修改的页面。</span></figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="case-section case-sharing" id="sharing" data-case-section data-motion-section aria-labelledby="sharing-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">05 · 分享</p>
+          <h2 id="sharing-title">让一次真实漫步，拥有适合分享的表达</h2>
+          <p>Agent 的 <code>social_copy</code> 能力把路线、沿途记录与用户想表达的语用编译成可发布的分享内容：先判断是实际分享、计划分享还是同行邀约，再输出同一表达风格下的完整版与简短版。路线事实和沿途记录会被分级为证据等级。</p>
+        </header>
+
+        <figure class="case-figure share-product-shot case-reveal motion-step" data-motion-step="share-shot">
+          <button class="case-shot" type="button" data-case-gallery="social-copy" data-full="assets/citywalk/web-social-copy.webp" data-caption="分享文案结果：同一表达风格下的完整版与简短版" aria-label="放大查看分享文案结果">
+            <img src="assets/citywalk/web-social-copy.webp" alt="CityWalk Pulse 分享文案结果，展示本次表达风格、完整版、简短版与复制文案操作" width="1920" height="1080" loading="lazy">
+          </button>
+          <figcaption><strong>同一表达风格，给出两种可发布长度</strong><span>完整版与简短版都可以继续复制、编辑和发布。</span></figcaption>
+        </figure>
+
+        <div class="share-flow case-reveal motion-step" data-motion-step="share-flow" aria-label="分享文案生成机制">
+          <article class="share-flow__step"><span>01</span><h3>请求识别</h3><p>先判断语用：实际分享、计划分享或同行邀约，再确定朋友圈、小红书、微博或 Caption 的表达任务。</p></article>
+          <article class="share-flow__step"><span>02</span><h3>证据编译</h3><p>路线事实、用户片段与 Walk 记录分级进入；证据等级决定哪些细节可以写进文案。</p></article>
+          <article class="share-flow__step"><span>03</span><h3>语言指纹</h3><p>把句式节奏、叙事推进、细节范围和结尾方式组合成稳定表达风格，而不是套用一个风格标签。</p></article>
+          <article class="share-flow__step"><span>04</span><h3>生成与验收</h3><p>同一表达风格输出完整版与简短版，经过独立语义评审后再交给用户复制、编辑和发布。</p></article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="case-section case-memory" id="memory" data-case-section data-motion-section aria-labelledby="memory-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">06 · 记忆</p>
+          <h2 id="memory-title">让每一次真实行为，成为下一次规划的依据</h2>
+          <p>记忆系统参考开源项目 Mem0 的 Extract + Reconcile 思路，并围绕 CityWalk 的行为证据强度重新设计。写入来源限定为用户明确表达和达到阈值的行为证据；Agent 生成内容的偏好证据权重为零。</p>
+        </header>
+
+        <div class="memory-types motion-step" data-motion-step="memory-types" aria-label="三层长期记忆">
+          <article class="case-reveal"><span>Semantic</span><h3>语义记忆</h3><p>稳定画像、类别偏好、风格偏好与长期约束，例如偏爱独立书店、避开拥挤商业街。</p></article>
+          <article class="case-reveal"><span>Episodic</span><h3>情景记忆</h3><p>某次真实旅程中的明确体验，例如去过一家咖啡馆并认为太吵。</p></article>
+          <article class="case-reveal"><span>Procedural</span><h3>程序记忆</h3><p>用户与 Agent 协作时更习惯的规划方式，例如雨天室内优先、每段少走路。</p></article>
+        </div>
+
+        <div class="memory-system case-reveal motion-step" data-motion-step="memory-system">
+          <div class="memory-pipeline" aria-label="记忆写入与召回流程">
+            <article><span>01 · Extract</span><strong>抽取候选事实</strong><p>只从用户明确表达或合格行为事件中提取。</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>02 · Reconcile</span><strong>比较现有记忆</strong><p>产生 ADD / UPDATE / DELETE / NONE，并保留来源与置信度。</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>03 · Recall</span><strong>混合召回</strong><p>关键词、向量余弦相似度与记忆置信度共同计分。</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>04 · Apply</span><strong>按优先级使用</strong><p>本轮明确要求始终高于最近对话、长期记忆与默认值。</p></article>
+          </div>
+
+          <div class="memory-implementation">
+            <div>
+              <p class="case-eyebrow">短期上下文</p>
+              <h3>最近对话与长期记忆分开</h3>
+              <p>同一 threadId 保存多轮上下文，解决“换一家”“预算不变”等指代；这些消息不会自动永久化。</p>
+            </div>
+            <div>
+              <p class="case-eyebrow">底层召回</p>
+              <h3>关键词 + 768 维向量</h3>
+              <p>Embedding 默认生成 768 维向量，并与内容哈希一起写入 SQLite；召回融合语义相似度、关键词命中与置信度。</p>
+            </div>
+            <div>
+              <p class="case-eyebrow">失败降级</p>
+              <h3>缩小能力，不伪造确定性</h3>
+              <p>Embedding 未配置或失败时自动降级到关键词召回，记忆读写不停止；SQLite 精确计算适配当前个人原型规模。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="memory-proof">
+          <div class="evidence-ladder case-reveal motion-step" data-motion-step="memory-ladder">
+            <p class="case-eyebrow">什么才有资格成为长期偏好</p>
+            <ol>
+              <li><span>路线生成</span><strong>不写偏好</strong><p>只能证明用户提出过一次要求。</p></li>
+              <li><span>一次收藏</span><strong>保留兴趣事实</strong><p>但不直接推断长期喜欢。</p></li>
+              <li><span>一次完成</span><strong>证据仍不足</strong><p>可能只是当下场景的结果。</p></li>
+              <li><span>明确反馈或多次独立完成</span><strong>进入候选记忆</strong><p>多次一致行为先以较低置信度写入，用户纠正始终更高。</p></li>
+            </ol>
+          </div>
+
+          <figure class="case-figure case-reveal motion-step" data-motion-step="memory-proof">
+            <button class="case-shot" type="button" data-case-gallery="memory" data-full="assets/citywalk/web-memory.webp" data-caption="长期偏好、规划习惯与旅程经历都允许用户查看和管理" aria-label="放大查看记忆页面">
+              <img src="assets/citywalk/web-memory.webp" alt="CityWalk Pulse 记忆页面，按长期偏好、规划习惯和旅程经历分层展示" width="1280" height="720" loading="lazy">
+            </button>
+            <figcaption><strong>每条记忆都可以被管理。</strong><span>用户可查看记忆类型、来源与置信度，也可以删除或明确要求遗忘。</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-evaluation" id="evaluation" data-case-section data-motion-section aria-labelledby="evaluation-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">07 · 评测</p>
+          <h2 id="evaluation-title">把产品判断，写进可以持续回归的证据</h2>
+          <p>路线“看起来合理”远远不够。配套评测系统把场景、工具调用、最终答案和 Agent Trace 组织成一套可以批量执行、比较结果与定位失败的质量闭环。评测样例也从路线规划持续扩展到技能、文案、行中与手账——每个新功能上线前，先有自己的回归样例。</p>
+        </header>
+
+        <div class="eval-overview case-reveal motion-step" data-motion-step="eval-overview">
+          <div class="eval-stat"><strong>50</strong><span>条规划场景</span><p>40 条主回归 + 10 条无障碍与稳定性专项</p></div>
+          <div class="eval-stat"><strong>11</strong><span>项混合指标</span><p>基础与专属质量共同评判，0.6 硬门槛直接拦截</p></div>
+          <div class="eval-stat"><strong>4 + 1 + 6</strong><span>三类裁判</span><p>确定性规则 + 统计算法 + LLM / 混合裁判</p></div>
+          <div class="eval-stat"><strong>21</strong><span>组专项脚本</span><p>技能、文案、行中、手账与稳定性各有回归入口</p></div>
+        </div>
+
+        <div class="eval-workflow motion-step" data-motion-step="eval-workflow" aria-label="评测工作流">
+          <article><span>01</span><h3>准备数据</h3><p>单轮、多轮、工具金标、条件工具、禁止工具与步骤预算。</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span>02</span><h3>执行 Run</h3><p>批量触发 Agent，保存回答、工具调用、结果与裁判方式。</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span>03</span><h3>分析 Trace</h3><p>从总体指标下钻到某轮约束、某次工具参数和判定理由。</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span>04</span><h3>回归产品规则</h3><p>把失败转成约束携带、降级或界面提示的下一轮修改。</p></article>
+        </div>
+
+        <div class="eval-coverage motion-step" data-motion-step="eval-coverage">
+          <p class="case-eyebrow case-reveal">样例家族 · 不止路线规划</p>
+          <div class="eval-coverage-grid">
+            <article class="case-reveal"><span>规划</span><h3>路线规划场景</h3><p>约束解析、亲子、无障碍、天气敏感、低预算与极端约束兜底，覆盖从出发到收尾的完整规划链路。</p></article>
+            <article class="case-reveal"><span>技能</span><h3>技能效果对照</h3><p>六个内置技能逐一跑「有无技能」对照实验：用伪地图与伪天气工具验证技能真的改变检索关键词、室内偏好与最终站点，而不是只改了提示词。</p></article>
+            <article class="case-reveal"><span>文案</span><h3>社交分享文案</h3><p>平台识别、已走 / 未走口吻、邀约检测与风格组合逐项断言；文案必须锚定路线事实，禁止营销腔和虚构天气、食物与偶遇。</p></article>
+            <article class="case-reveal"><span>行中</span><h3>行中记录与调整</h3><p>行走会话、行中改路线与行走记忆写回，覆盖"走起来之后"的链路，验证规划之外的第二现场。</p></article>
+            <article class="case-reveal"><span>手账</span><h3>手账生成</h3><p>排版、Zine 版式与旅程叙事的结构校验，保证分享产物在真实数据下稳定可读、不塌版。</p></article>
+            <article class="case-reveal"><span>稳定</span><h3>稳定性与降级</h3><p>LLM 重试与模型降级、长期记忆读写、移动端同步：异常路径也要有可预期的行为，而不是静默失败。</p></article>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--cinema case-reveal motion-step" data-motion-step="eval-overview-shot">
+          <button class="case-shot" type="button" data-case-gallery="evaluation" data-full="assets/citywalk/evaluation-overview.webp" data-caption="评测总览把数据集、Run 与 Trace 组织为三阶段工作流" aria-label="放大查看评测系统概览">
+            <img src="assets/citywalk/evaluation-overview.webp" alt="CityWalk Agent 评测系统概览页，展示工作流、近期得分和统计信息" width="1280" height="720" loading="lazy">
+          </button>
+          <figcaption>总览提供近期质量概况，Run 与 Trace 继续展开到每条用例、工具调用和裁判依据。</figcaption>
+        </figure>
+
+        <div class="eval-run-grid motion-step" data-motion-step="eval-run">
+          <figure class="case-figure case-reveal">
+            <button class="case-shot" type="button" data-case-gallery="evaluation" data-full="assets/citywalk/evaluation-run.webp" data-caption="一次 Run 汇总十条用例、十一项指标与逐条得分" aria-label="放大查看评测 Run">
+              <img src="assets/citywalk/evaluation-run.webp" alt="CityWalk Agent 评测 Run 结果，展示十条用例、雷达图、分布和逐条得分" width="1280" height="720" loading="lazy">
+            </button>
+            <figcaption><strong>批量结果</strong><span>发现整体偏差，也保留逐条用例的入口。</span></figcaption>
+          </figure>
+        </div>
+
+        <figure class="case-figure case-figure--cinema case-reveal motion-step" data-motion-step="eval-trace">
+          <button class="case-shot" type="button" data-case-gallery="evaluation" data-full="assets/citywalk/evaluation-trace.webp" data-caption="多轮无障碍 Trace 下钻到输入、工具、输出与每项裁判依据" aria-label="放大查看多轮评测 Trace">
+            <img src="assets/citywalk/evaluation-trace.webp" alt="多轮无障碍评测 Trace，展示轮椅、电梯和无障碍卫生间约束及结构化参考" width="1280" height="720" loading="lazy">
+          </button>
+          <figcaption><strong>N/A 记录证据缺口。</strong><span>缺少可靠证据时标记为 N/A；裁判超时后依据规则证据决定是否降级。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section case-boundaries" id="boundaries" data-case-section aria-labelledby="boundaries-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide case-reveal">
+          <p class="case-kicker">08 · 边界</p>
+          <h2 id="boundaries-title">项目边界与产品收获</h2>
+          <p>当前阶段是能力闭环已经落到代码的个人项目，下一步围绕真实用户、移动端环境和生成质量展开验证。</p>
+        </header>
+
+        <div class="boundary-grid">
+          <article class="case-reveal">
+            <span>已实现</span>
+            <h3>可运行的高保真全栈原型</h3>
+            <ul>
+              <li>多意图 Agent、约束账本与结构化路线</li>
+              <li>地图 / 天气 / 公开内容发现与二次核验</li>
+              <li>动态改路、跨端同步、途中记录、成册与分享文案</li>
+              <li>三层记忆、混合召回与配套评测接口</li>
+            </ul>
+          </article>
+          <article class="case-reveal">
+            <span>仍需验证</span>
+            <h3>仍需真实用户验证</h3>
+            <ul>
+              <li>专属评分是否比地图默认排序更符合感受</li>
+              <li>密集街区的到达判断与行中操作是否足够快</li>
+              <li>场景蒸馏的稳定美感、成本与使用意愿</li>
+              <li>记忆阈值会不会学得太慢或产生错误推断</li>
+            </ul>
+          </article>
+          <article class="case-reveal">
+            <span>数据与能力边界</span>
+            <h3>当前原型的验证口径</h3>
+            <ul>
+              <li>尚未产生线上 DAU、留存或商业转化数据</li>
+              <li>Android 仍需正式环境的发布构建与真机兼容验收</li>
+              <li>不承诺场馆的实时库存或预约余量</li>
+              <li>评测结论只对应明确样本、指标与版本</li>
+            </ul>
+          </article>
+        </div>
+
+        <blockquote class="closing-learning case-reveal">
+          <p>我对 Agent 的理解，从“让模型输出更像答案”，转向了“设计状态、工具、证据、反馈与失败边界，让系统在多轮和真实世界变化中仍然可靠”。</p>
+          <footer>刘子豪 · 产品经理方向</footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <div class="case-shell">
+      <p>CityWalk Pulse · 刘子豪产品作品集</p>
+      <div>
+        <a href="index.html#citywalk">返回项目总览</a>
+        <a href="possibilities.html">下一个案例：See All Possibilities →</a>
+        <a href="mailto:3407749043@qq.com">3407749043@qq.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="case-dialog" id="case-image-dialog" role="dialog" aria-modal="true" aria-label="界面图片查看器" aria-hidden="true" hidden inert>
+    <button class="case-dialog__backdrop" type="button" data-case-dialog-close aria-label="关闭图片查看器"></button>
+    <div class="case-dialog__panel" role="document">
+      <div class="case-dialog__toolbar">
+        <button type="button" data-case-dialog-prev aria-label="查看上一张图片">←</button>
+        <span>可使用键盘方向键切换</span>
+        <button type="button" data-case-dialog-next aria-label="查看下一张图片">→</button>
+        <button type="button" data-case-dialog-close aria-label="关闭图片查看器">关闭</button>
+      </div>
+      <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>
+

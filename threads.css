@@ -1,0 +1,12 @@
+/* Threads — 背景特效 canvas（由 threads.js 注入带 data-threads 的容器）。
+   透明底 + alexent 主题绿的 alpha 合成，叠加在纸面背景上。 */
+
+.threads-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}

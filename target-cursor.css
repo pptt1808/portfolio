@@ -1,0 +1,46 @@
+/* TargetCursor — Vue Bits <TargetCursor /> 的全站共享样式（配合 target-cursor.js）。
+   白色 + difference 混合模式，在浅色纸面与深色截图背景上都保持清晰。 */
+
+.target-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.target-cursor-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 9999px;
+  will-change: transform;
+}
+
+.target-cursor-corner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #fff;
+  will-change: transform;
+}
+
+.target-cursor-corner--tl { border-right: 0; border-bottom: 0; }
+.target-cursor-corner--tr { border-bottom: 0; border-left: 0; }
+.target-cursor-corner--br { border-top: 0; border-left: 0; }
+.target-cursor-corner--bl { border-top: 0; border-right: 0; }
+
+/* hideDefaultCursor: 光标激活期间隐藏原生光标（覆盖 a/button/zoom-in 等 UA 与组件级 cursor 设置）。 */
+html.target-cursor-active,
+html.target-cursor-active * {
+  cursor: none !important;
+}

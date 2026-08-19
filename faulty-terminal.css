@@ -1,0 +1,14 @@
+/* FaultyTerminal — 背景特效 canvas（由 faulty-terminal.js 注入容器）。
+   透明底 + 主题 teal 的 alpha 合成，叠加在纸面背景上。 */
+
+.faulty-terminal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}

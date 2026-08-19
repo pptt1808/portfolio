@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘子豪的 Drama 项目案例：让 AI 读懂一集短剧，并将剧情理解转化为可控互动。">
+  <meta name="theme-color" content="#f3eee4">
+  <title>Drama｜刘子豪产品作品集</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="drama.css">
+  <link rel="stylesheet" href="prism.css">
+  <link rel="stylesheet" href="target-cursor.css">
+  <link rel="stylesheet" href="gooey-nav.css">
+  <script src="gsap.min.js" defer></script>
+  <script src="target-cursor.js" defer></script>
+  <script src="drama.js" defer></script>
+  <script src="gooey-nav.js" defer></script>
+  <script src="prism.js" defer></script>
+</head>
+<body class="case-page drama-page">
+  <a class="skip-link" href="#case-main">跳到案例正文</a>
+
+  <header class="case-header" data-case-header>
+    <div class="case-header__inner">
+      <a class="case-back" href="index.html#drama" aria-label="返回作品集中的 Drama 项目">← 返回全部项目</a>
+      <a class="case-wordmark" href="#top">刘子豪 · 产品经理作品集</a>
+      <span class="case-progress" data-case-progress aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <nav class="case-chapters" aria-label="Drama 项目章节" data-gooey-nav>
+    <a href="#top" data-chapter-link>命题</a>
+    <a href="#understand" data-chapter-link>理解</a>
+    <a href="#cross-analysis" data-chapter-link>交叉分析</a>
+    <a href="#pipeline" data-chapter-link>中间层 / 审核</a>
+    <a href="#runtime" data-chapter-link>互动</a>
+    <a href="#branches" data-chapter-link>分支</a>
+    <a href="#agent" data-chapter-link>Agent</a>
+    <a href="#takeaway" data-chapter-link>判断</a>
+  </nav>
+
+  <main id="case-main">
+    <section class="case-intro drama-hero" id="top" data-case-section data-prism aria-labelledby="case-title">
+      <div class="case-shell drama-hero__grid">
+        <div class="drama-hero__copy">
+          <p class="case-kicker">Drama · AI 互动短剧工程实验</p>
+          <h1 id="case-title">让 AI 读懂一集短剧，再把剧情理解编译成可控互动</h1>
+          <p class="case-lede">Drama 从视频、台词与角色资产中建立结构化剧情理解，识别人物、场景、冲突与高光，再把选择、角色对话和物件探索精确挂到播放时间轴上。它探索的核心，是如何把模型的语义能力转译为一套可审核、可校准、可运行的互动叙事系统。</p>
+
+          <dl class="case-facts">
+            <div><dt>我的角色</dt><dd>个人主导 · 产品设计与全栈实现</dd></div>
+            <div><dt>客户端</dt><dd>Kotlin · Jetpack Compose · ExoPlayer</dd></div>
+            <div><dt>服务端</dt><dd>Spring Boot · 多模型内容 Pipeline</dd></div>
+          </dl>
+
+          <ol class="hero-capabilities" aria-label="项目核心能力">
+            <li><span>01</span><strong>理解</strong><p>把视听内容整理为可查询的剧情结构</p></li>
+            <li><span>02</span><strong>介入</strong><p>把互动候选定位到播放时间轴</p></li>
+            <li><span>03</span><strong>延展</strong><p>让剧情 Agent 基于证据继续讨论故事</p></li>
+          </ol>
+        </div>
+
+        <figure class="drama-shot drama-shot--phone case-reveal">
+          <button type="button" data-gallery-trigger data-full="assets/drama/real-player.png" data-caption="墓影迷踪第 67 集播放器" aria-label="放大查看墓影迷踪第 67 集播放器">
+            <img src="assets/drama/real-player.png" alt="墓影迷踪第 67 集播放器，显示真实视频画面、播放进度和高光标记" width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async">
+          </button>
+          <figcaption>墓影迷踪第 67 集正在播放：视频、时间轴、高光与互动入口被组织在同一观看界面。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section drama-understand" id="understand" data-case-section aria-labelledby="understand-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide">
+          <p class="case-kicker">01 · 核心挑战</p>
+          <h2 id="understand-title">Drama 的核心问题，是如何让 AI 读懂一集短剧</h2>
+          <p>短剧理解需要同时处理剧情结构、人物身份与高光时刻，并为每个判断保留对应的物理时间；这些结果继续服务互动节点、播放器与剧情 Agent。</p>
+        </header>
+
+        <div class="visual-chain case-reveal" aria-label="Drama 从内容到产品能力的三步视觉链">
+          <article><span>01</span><small>系列入口</small><strong>确定观看范围</strong><p>先锁定作品与当前剧集。</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span>02</span><small>单集上下文</small><strong>绑定视频与资料</strong><p>把台词、画面和角色放进同一集。</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span>03</span><small>剧情理解</small><strong>生成可消费结构</strong><p>剧情、人物、高光与时间字段共同服务互动。</p></article>
+        </div>
+
+        <div class="understand-evidence-layout">
+          <div class="interface-evidence-grid" aria-label="Drama 客户端剧集入口界面">
+            <figure class="interface-evidence case-reveal">
+            <button type="button" data-gallery-trigger data-full="assets/drama/real-series-list.png" data-caption="短剧互动系列入口">
+              <img src="assets/drama/real-series-list.png" alt="短剧互动首页，展示墓影迷踪系列入口与第 67 集信息" width="1080" height="2400" loading="lazy" decoding="async">
+            </button>
+            <figcaption>从系列入口进入一集内容，先确定剧集与观看上下文。</figcaption>
+            </figure>
+            <figure class="interface-evidence case-reveal">
+            <button type="button" data-gallery-trigger data-full="assets/drama/real-episode-guide.png" data-caption="墓影迷踪剧集放映单">
+              <img src="assets/drama/real-episode-guide.png" alt="墓影迷踪剧集放映单，展示第 67 集、地宫深处与 06:03 时长" width="1080" height="2400" loading="lazy" decoding="async">
+            </button>
+            <figcaption>放映单把单集、标题与时长组织成可进入的观看单元。</figcaption>
+            </figure>
+          </div>
+          <aside class="understand-evidence-copy case-reveal">
+            <p class="case-eyebrow">从入口到理解上下文</p>
+            <h3>先确定“看哪一集”，再让 AI 理解“这一集发生了什么”</h3>
+            <p>两张界面展示了 Drama 的内容入口层：系列入口确定观看范围，放映单把用户带入具体集数。AI 后续读取的剧情、人物和互动节点，都挂在这个单集上下文之下。</p>
+            <ol>
+              <li><span>01</span><div><strong>系列入口</strong><small>确认作品与观看范围</small></div></li>
+              <li><span>02</span><div><strong>单集上下文</strong><small>锁定集数、标题与时长</small></div></li>
+              <li><span>03</span><div><strong>剧情理解</strong><small>绑定视频、台词和角色资料</small></div></li>
+            </ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section drama-cross" id="cross-analysis" data-case-section aria-labelledby="cross-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide">
+          <p class="case-kicker">02 · 多模态交叉分析</p>
+          <h2 id="cross-title">用三路证据，完成角色识别与场景理解</h2>
+          <p>单独依赖声音会留下匿名说话人，单独依赖画面又无法还原完整语义。Drama 将台词转录、视觉帧和角色资产库放到同一个时间语境里，让模型依据可核对的线索完成映射。</p>
+        </header>
+
+        <div class="evidence-convergence case-reveal" aria-label="三路证据汇合为结构化场景">
+          <div class="evidence-convergence__sources">
+          <article class="input-source case-reveal">
+            <span>01</span>
+            <h3>台词转录</h3>
+            <p><code>SPEAKER_01</code> + 时间戳</p>
+          </article>
+          <article class="input-source case-reveal">
+            <span>02</span>
+            <h3>视觉帧</h3>
+            <p>人物外观 + 同框关系</p>
+          </article>
+          <article class="input-source case-reveal">
+            <span>03</span>
+            <h3>角色资产库</h3>
+            <p>姓名 + 正面照 + 外貌描述</p>
+          </article>
+          </div>
+          <div class="evidence-convergence__join" aria-hidden="true"><span>交叉匹配</span><i>↓</i></div>
+          <div class="evidence-convergence__result"><small>结构化场景</small><strong>人物 · 场景 · 冲突 · 时间</strong><span><code>SPEAKER_01</code> → 项云峰</span></div>
+        </div>
+
+        <div class="cross-evidence-grid">
+          <article class="speaker-map case-reveal">
+            <p class="case-eyebrow">角色映射</p>
+            <div class="speaker-map__result">
+              <code>SPEAKER_01</code>
+              <span aria-hidden="true">→</span>
+              <strong>项云峰</strong>
+            </div>
+            <ol>
+              <li><span>台词称呼</span><p>相邻对话中出现角色间的称谓。</p></li>
+              <li><span>同时间画面</span><p>说话时段的关键帧提供人物外观。</p></li>
+              <li><span>注册名单</span><p>在当前系列的已知角色范围内匹配。</p></li>
+            </ol>
+            <p class="evidence-note">当证据不足，结果继续保留为 <code>SPEAKER_XX</code>，让不确定性停留在数据层。</p>
+          </article>
+
+          <article class="scene-json case-reveal">
+            <p class="case-eyebrow">结构化场景中间层</p>
+            <pre><code>{
+  "timestamp_start": 134.0,
+  "timestamp_end": 168.0,
+  "characters": [
+    "项云峰",
+    "光头摊贩"
+  ],
+  "summary": "项云峰在古玩市场揭穿摊贩赝品……",
+  "emotion_tone": "conflict",
+  "conflict_type": "confrontation",
+  "visual_context": "露天摊位，人声嘈杂……"
+}</code></pre>
+            <ul class="scene-consumers" aria-label="结构化场景的下游用途">
+              <li>故事弧</li>
+              <li>高光识别</li>
+              <li>互动节点</li>
+              <li>角色画像</li>
+              <li>剧情 Agent</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="character-registry-showcase case-reveal" aria-label="角色注册表及其下游用途">
+          <figure class="interface-evidence character-registry-shot">
+            <button type="button" data-gallery-trigger data-full="assets/drama/real-character-registry.png" data-caption="墓影迷踪角色注册表">
+              <img src="assets/drama/real-character-registry.png" alt="墓影迷踪角色注册表，列出项云峰与同行者，并显示正面照和全身照资产状态" width="1080" height="2400" loading="lazy" decoding="async">
+            </button>
+            <figcaption>角色注册表：把姓名、正面照、全身照和外貌描述整理成可复用的角色资产。</figcaption>
+          </figure>
+          <div class="character-registry-copy">
+            <p class="case-eyebrow">角色注册表 · 从理解到生成</p>
+            <h3>先限定角色范围，再让模型在范围内完成识别与生成</h3>
+            <p>注册表把“这个系列里可能出现谁”提前固定下来，角色资产也因此成为后续多个 AI 环节共享的输入。</p>
+            <div class="character-registry-purpose-grid">
+              <article><small>理解阶段</small>
+                <span>01</span>
+                <h4>为图像识别人物提供依据</h4>
+                <p>视觉帧中的人物会与注册表里的正面照、全身照和外貌描述比对，再结合台词称呼与同框关系，把匿名说话人映射到具体角色。</p>
+                <strong>视觉帧 + 角色资产 → 项云峰</strong>
+              </article>
+              <article><small>生成阶段</small>
+                <span>02</span>
+                <h4>为分支视频生成提供角色素材</h4>
+                <p>当 Choice 产生局部分支，生成分支视频需要稳定的角色外观参考。注册表提供可直接复用的角色素材，帮助生成结果维持人物一致性。</p>
+                <strong>角色资产 + 分支脚本 → 分支视频</strong>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section drama-pipeline" id="pipeline" data-case-section aria-labelledby="pipeline-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide">
+          <p class="case-kicker">03 · 中间层 / 审核</p>
+          <h2 id="pipeline-title">让理解结果经过状态流，才进入互动</h2>
+          <p>声音与画面并行分析，汇合为结构化场景；高光与互动候选在同一事实层上继续生成，随后进入审核与时间校准。</p>
+        </header>
+
+        <ol class="state-pipeline case-reveal" aria-label="从输入到审核校准的工程流程">
+          <li><span>01</span><strong>输入</strong><small>视频 · 台词 · 角色资产</small></li>
+          <li><span>02</span><strong>并行分析</strong><small>转录 + 视觉帧</small></li>
+          <li><span>03</span><strong>场景结构化</strong><small>人物 · 冲突 · 时间</small></li>
+          <li><span>04</span><strong>高光/互动</strong><small>候选节点与故事弧</small></li>
+          <li class="is-state"><span>05</span><strong><code>pending_review</code></strong><small>等待人工检查</small></li>
+          <li class="is-final"><span>06</span><strong>人工校准</strong><small>内容 · 角色 · 0.1 秒</small></li>
+        </ol>
+
+        <div class="pipeline-notes case-reveal">
+          <article><span>内容闸门</span><strong>审核后才生成可运行节点</strong><p>编辑者检查互动是否符合剧情、角色语气与观看节奏。</p></article>
+          <article><span>时间闸门</span><strong>语义锚点落到播放器秒数</strong><p><code>anchor_line</code> → 台词 <code>end</code> → 0.1 秒预览校准。</p></article>
+          <article><span>两条轨道</span><strong>高光与互动各自服务体验</strong><p>高光标记张力分布，互动节点负责介入方式。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section drama-runtime" id="runtime" data-case-section aria-labelledby="runtime-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide">
+          <p class="case-kicker">05 · 互动运行时</p>
+          <h2 id="runtime-title">三类互动，以不同强度进入播放过程</h2>
+          <p>播放器通过 ExoPlayer 时间轴检查待触发节点。不同互动对观看注意力的要求不同，因此暂停规则、停留时间和后续反馈也被分别设计；Seek 后则重置触发队列，保证回看时状态一致。</p>
+        </header>
+
+        <div class="runtime-carousel case-reveal" data-runtime-carousel aria-label="互动类型演示">
+          <div class="runtime-carousel__tabs" role="tablist" aria-label="选择互动类型">
+            <button id="runtime-tab-choice" type="button" role="tab" aria-selected="true" aria-controls="runtime-panel-choice" tabindex="0" data-runtime-tab="choice"><span>01</span><strong>Choice</strong><small>主动改变</small></button>
+            <button id="runtime-tab-dialogue" type="button" role="tab" aria-selected="false" aria-controls="runtime-panel-dialogue" tabindex="-1" data-runtime-tab="dialogue"><span>02</span><strong>Dialogue</strong><small>角色交流</small></button>
+            <button id="runtime-tab-object" type="button" role="tab" aria-selected="false" aria-controls="runtime-panel-object" tabindex="-1" data-runtime-tab="object"><span>03</span><strong>Object</strong><small>轻量探索</small></button>
+          </div>
+
+          <div class="runtime-carousel__stage" aria-live="polite">
+            <article class="runtime-carousel__panel is-active" id="runtime-panel-choice" role="tabpanel" aria-labelledby="runtime-tab-choice" data-runtime-panel="choice">
+              <figure class="runtime-carousel__media">
+                <button type="button" data-gallery-trigger data-full="assets/drama/real-choice-interaction.png" data-caption="Choice 选择互动界面" aria-label="放大查看 Choice 选择互动界面">
+                  <img src="assets/drama/real-choice-interaction.png" alt="Choice 选择互动界面，展示墓道分岔与可选行动" width="1080" height="2400" loading="lazy" decoding="async">
+                </button>
+              </figure>
+              <div class="runtime-carousel__copy">
+                <p class="case-eyebrow">Choice · 主动改变</p>
+                <h3>选择剧情走向</h3>
+                <p>触发时暂停播放，给出与当前冲突直接相关的选项。错误选择先展示局部后果，再允许用户回溯重选。</p>
+                <ol><li>时间戳命中</li><li>暂停并展示选项</li><li>播放选择后果</li><li>回溯或回到主线</li></ol>
+                <div class="runtime-carousel__rule"><span>播放规则</span><strong>暂停 · 用户决策</strong><p>需要集中注意力，局部分支在明确节点重新收束。</p></div>
+              </div>
+            </article>
+
+            <article class="runtime-carousel__panel" id="runtime-panel-dialogue" role="tabpanel" aria-labelledby="runtime-tab-dialogue" data-runtime-panel="dialogue" hidden>
+              <figure class="runtime-carousel__media">
+                <button type="button" data-gallery-trigger data-full="assets/drama/real-dialogue-interaction.png" data-caption="Dialogue 角色对话互动界面" aria-label="放大查看 Dialogue 角色对话互动界面">
+                  <img src="assets/drama/real-dialogue-interaction.png" alt="Dialogue 角色对话互动界面，播放器上覆盖项云峰的剧情对话层与输入框" width="1080" height="2400" loading="lazy" decoding="async">
+                </button>
+              </figure>
+              <div class="runtime-carousel__copy">
+                <p class="case-eyebrow">Dialogue · 角色交流</p>
+                <h3>在剧情当下与角色对话</h3>
+                <p>触发时暂停播放，通过 SSE 流式返回角色回复，并将互动控制在最多两轮，避免对话无限延长、脱离当前场景。</p>
+                <ol><li>载入当前角色与场景</li><li>用户提出一句话</li><li>流式生成角色回应</li><li>两轮内回到观看</li></ol>
+                <div class="runtime-carousel__rule"><span>播放规则</span><strong>暂停 · 最多两轮</strong><p>角色与场景上下文限定回答边界，结束后回到当前观看位置。</p></div>
+              </div>
+            </article>
+
+            <article class="runtime-carousel__panel" id="runtime-panel-object" role="tabpanel" aria-labelledby="runtime-tab-object" data-runtime-panel="object" hidden>
+              <figure class="runtime-carousel__media">
+                <button type="button" data-gallery-trigger data-full="assets/drama/real-object-interaction.png" data-caption="Object 物件探索互动界面" aria-label="放大查看 Object 物件探索互动界面">
+                  <img src="assets/drama/real-object-interaction.png" alt="Object 物件探索互动界面，展示视频画面上的白色脉冲热点与径向聚焦层" width="1080" height="2400" loading="lazy" decoding="async">
+                </button>
+              </figure>
+              <div class="runtime-carousel__copy">
+                <p class="case-eyebrow">Object · 轻量探索</p>
+                <h3>发现画面中的叙事物件</h3>
+                <p>热点在画面中停留 3 秒，点击后展开物件信息；播放过程持续进行，用户也可以直接忽略。</p>
+                <ol><li>热点随画面出现</li><li>保持播放 3 秒</li><li>点击展开叙事信息</li><li>关闭后继续观看</li></ol>
+                <div class="runtime-carousel__rule"><span>播放规则</span><strong>不停播 · 可忽略</strong><p>轻量信息层覆盖画面，不打断主线节奏。</p></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="runtime-carousel__footer"><span data-runtime-status>01 / 03</span><p>悬停或聚焦时暂停自动切换</p></div>
+        </div>
+
+        <article class="timestamp-decision case-reveal" aria-labelledby="timestamp-decision-title">
+          <header>
+            <p class="case-eyebrow">AI 如何判断互动时间点</p>
+            <h3 id="timestamp-decision-title">先判断“剧情上该不该打断”，再定位“播放器的哪一秒”</h3>
+            <p>模型负责发现适合选择、对话或物件探索的语义时刻，但不直接估算最终秒数。时间定位由台词锚点、服务端消歧和编辑校准共同完成。</p>
+          </header>
+          <ol class="timestamp-decision__steps">
+            <li><span>01</span><div><strong>判断介入价值</strong><p>Claude 结合故事弧、连续场景、人物关系与跨集走向，判断此刻是否存在值得打断观看的选择、对话或探索机会。</p></div></li>
+            <li><span>02</span><div><strong>返回台词锚点</strong><p>为候选节点同时返回原始台词 <code>anchor_line</code> 与 <code>timestamp_hint</code>，要求 hint 直接取该台词 segment 的 <code>end</code>。</p></div></li>
+            <li><span>03</span><div><strong>匹配绝对时间</strong><p>服务端先匹配完整台词；同一句话多次出现时，选择结束时间最接近 hint 的片段，再将精确 <code>end</code> 写入节点。</p></div></li>
+            <li><span>04</span><div><strong>视频预览精调</strong><p>编辑器围绕候选点预览视频、拖动 seek，并以 0.1 秒读数确认最终时间；播放器随后按该时间戳注册 ExoPlayer timed message。</p></div></li>
+          </ol>
+          <p class="timestamp-decision__note">Choice 会分别定位触发点与后续收束点：触发点决定何时出现选择，收束点决定局部分支在何处回到主线。</p>
+        </article>
+
+        <article class="highlight-sticker-showcase case-reveal" aria-labelledby="highlight-sticker-title">
+          <figure class="highlight-sticker-showcase__media">
+            <button type="button" data-gallery-trigger data-full="assets/drama/real-highlight-sticker.png" data-caption="播放中的高光贴纸反馈" aria-label="放大查看播放中的高光贴纸反馈">
+              <img src="assets/drama/real-highlight-sticker.png" alt="真实视频播放画面上出现猜对了高光贴纸与参与人数提示" width="1080" height="2400" loading="lazy" decoding="async">
+            </button>
+          </figure>
+          <div class="highlight-sticker-showcase__copy">
+            <p class="case-eyebrow">播放中高光反馈</p>
+            <h3 id="highlight-sticker-title">让高光时刻在播放中被看见</h3>
+            <p>高光贴纸独立于会暂停视频的互动节点，在精确时间点浮现在画面上，观众可以点击回应，贴纸到期自动消失。</p>
+            <ul>
+              <li><strong>不暂停</strong><span>视频保持连续播放</span></li>
+              <li><strong>可回应</strong><span>点击触发爆发反馈与参与人数</span></li>
+              <li><strong>自动消失</strong><span>持续时间结束后恢复干净画面</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section drama-branches" id="branches" data-case-section aria-labelledby="branches-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide">
+          <p class="case-kicker">06 · 分支架构</p>
+          <h2 id="branches-title">用麻花型分支，让选择产生后果，也让故事重新收束</h2>
+          <p>选择在局部展开、展示后果，再回到收束点继续主线。</p>
+        </header>
+
+        <div class="branch-layout">
+          <div class="branch-map case-reveal" role="group" aria-label="可选择查看的麻花型剧情分支">
+            <svg viewBox="0 0 900 480" role="img" aria-labelledby="branch-svg-title branch-svg-desc">
+              <title id="branch-svg-title">麻花型剧情分支结构</title>
+              <desc id="branch-svg-desc">主线在选择点拆分成两个局部分支，分别展示后果后重新汇聚到收束点。</desc>
+              <path class="branch-path branch-path--main" d="M80 240 H260" />
+              <path class="branch-path branch-path--a" data-branch-path="a" d="M260 240 C340 240 340 105 445 105 S565 240 650 240" />
+              <path class="branch-path branch-path--b" data-branch-path="b" d="M260 240 C340 240 340 375 445 375 S565 240 650 240" />
+              <path class="branch-path branch-path--main" d="M650 240 H820" />
+              <g class="branch-node branch-node--main" transform="translate(80 240)"><circle r="22"/><text y="48">主线情节</text></g>
+              <g class="branch-node branch-node--choice" transform="translate(260 240)"><circle r="28"/><text y="53">选择点</text></g>
+              <g class="branch-node" data-branch="a" tabindex="0" role="button" aria-label="查看选择 A：正面追问" transform="translate(445 105)"><circle r="31"/><text y="5">A</text><text y="58">正面追问</text></g>
+              <g class="branch-node" data-branch="b" tabindex="0" role="button" aria-label="查看选择 B：暂时隐瞒" transform="translate(445 375)"><circle r="31"/><text y="5">B</text><text y="58">暂时隐瞒</text></g>
+              <g class="branch-node branch-node--merge" transform="translate(650 240)"><circle r="28"/><text y="53">收束点</text></g>
+              <g class="branch-node branch-node--main" transform="translate(820 240)"><circle r="22"/><text y="48">继续主线</text></g>
+            </svg>
+            <div class="branch-controls" role="group" aria-label="分支说明选择">
+              <button type="button" data-branch="a" aria-pressed="true">选择 A · 正面追问</button>
+              <button type="button" data-branch="b" aria-pressed="false">选择 B · 暂时隐瞒</button>
+            </div>
+          </div>
+
+          <div class="branch-outcomes case-reveal">
+            <article data-branch-panel="a" class="is-active">
+              <span>选择 A</span>
+              <h3>正面追问</h3>
+              <p>角色立即回应，用户更快得到部分信息，也暴露了自己的怀疑。后果展示结束后，剧情回溯到可继续推进的节点。</p>
+            </article>
+            <article data-branch-panel="b">
+              <span>选择 B</span>
+              <h3>暂时隐瞒</h3>
+              <p>角色关系保持表面平静，但留下一处新的疑点。局部片段完成后同样抵达主线收束点。</p>
+            </article>
+            <dl>
+              <div><dt>局部后果</dt><dd>选择改变当前场景的信息与关系。</dd></div>
+              <div><dt>收束点</dt><dd>每条路径都回到可继续观看的位置。</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section drama-agent" id="agent" data-case-section aria-labelledby="agent-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--wide">
+          <p class="case-kicker">07 · Drama Agent</p>
+          <h2 id="agent-title">剧情 Agent 先查证故事，再回答问题</h2>
+          <p>Agent 先读取当前系列的结构化剧情，再回答集数、台词、人物动机与互动节点问题。</p>
+        </header>
+
+        <div class="agent-layout">
+          <figure class="drama-shot drama-shot--phone case-reveal">
+            <button type="button" data-gallery-trigger data-full="assets/drama/real-agent.png" data-caption="墓影迷踪剧情 AI 界面" aria-label="放大查看墓影迷踪剧情 AI 界面">
+              <img src="assets/drama/real-agent.png" alt="墓影迷踪剧情 AI 界面，提供梳理主线、分析选择、推演分支和角色对话入口" width="1080" height="2400" loading="lazy" decoding="async">
+            </button>
+            <figcaption>剧情 AI 直接把结构化理解转成四个可继续追问的故事入口。</figcaption>
+          </figure>
+
+          <div class="agent-evidence agent-mechanism-panel">
+            <header class="agent-mechanism-panel__header">
+              <p class="case-eyebrow">机制说明 · 从问题到回答</p>
+              <h3>Agent 如何把剧情事实组织成一次可追溯回答</h3>
+              <p>问题先归类，再取证；回答保留对应的场景与台词证据。</p>
+            </header>
+            <div class="agent-intent-grid case-reveal" aria-label="四个剧情入口及其任务机制">
+              <article><span>01</span><h4>梳理主线</h4><p>读取剧集概览、场景顺序与故事弧，把分散事件整理成连续因果。</p></article>
+              <article><span>02</span><h4>分析选择</h4><p>回查互动节点、前后场景与人物动机，解释某个决定改变了什么。</p></article>
+              <article><span>03</span><h4>推演分支</h4><p>以当前剧情事实为边界，结合收束点推演局部后果，避免改写既有主线。</p></article>
+              <article><span>04</span><h4>角色对话</h4><p>载入角色画像、关系与剧情进度，切换为受约束的角色扮演状态。</p></article>
+            </div>
+            <div class="agent-flow case-reveal" aria-label="剧情 Agent 四步回答流程">
+              <div><span>01</span><strong>问题</strong><small>识别用户想问什么</small></div>
+              <i aria-hidden="true">→</i>
+              <div><span>02</span><strong>工具</strong><small>按任务读取四类数据</small></div>
+              <i aria-hidden="true">→</i>
+              <div><span>03</span><strong>证据</strong><small>场景、人物、台词</small></div>
+              <i aria-hidden="true">→</i>
+              <div><span>04</span><strong>回答</strong><small>结论与不确定性</small></div>
+            </div>
+            <div class="agent-tools case-reveal">
+              <p class="case-eyebrow">工具归并为四类</p>
+              <code>剧集与场景</code><code>人物与关系</code><code>高光与互动</code><code>台词证据</code>
+            </div>
+
+            <article class="roleplay-protocol case-reveal">
+              <p class="case-eyebrow">角色扮演是一种受约束的模式切换</p>
+              <h3>先切换状态，再进入角色</h3>
+              <ol>
+                <li><p>调用 <code>notify_roleplay</code>，记录模式变化。</p></li>
+                <li><p>读取角色画像，确定性格、关系和当前剧情进度。</p></li>
+                <li><p>先以角色身份询问用户想聊什么，不擅自设定场景。</p></li>
+                <li><p>用户明确场景后再加入具体细节，并保持状态直到退出。</p></li>
+              </ol>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="case-section drama-takeaway" id="takeaway" data-case-section aria-labelledby="takeaway-title">
+      <div class="case-shell">
+        <header class="case-heading case-heading--display">
+          <p class="case-kicker">08 · 产品判断</p>
+          <h2 id="takeaway-title">把 AI 的理解能力，落到可运行的产品结构里</h2>
+          <p>我把证据、状态、时间和人工判断放进同一条产品链路。</p>
+        </header>
+
+        <div class="takeaway-grid">
+          <article class="case-reveal"><span>01</span><h3>中间层优先</h3><p>先定义下游真正需要的场景、人物、冲突、高光与时间字段，再决定每种模型负责哪一步。结构化理解使多个产品能力共享同一事实来源。</p></article>
+          <article class="case-reveal"><span>02</span><h3>语义与时间分层</h3><p>让模型判断剧情意义，让程序和编辑器负责绝对时间与逐帧触发。把不同性质的问题交给各自更可靠的环节。</p></article>
+          <article class="case-reveal"><span>03</span><h3>约束不确定性</h3><p>审核状态、触发窗口与局部收束，让 AI 候选进入可检查、可回溯的体验。</p></article>
+        </div>
+
+        <blockquote class="closing-learning case-reveal">
+          <p>这次实践让我更清楚：AI 产品设计需要同时定义证据如何进入、理解如何保存、结果如何被校准，以及人在什么位置做最终判断。</p>
+          <footer>刘子豪 · 产品经理方向</footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <div class="case-shell">
+      <p>Drama · 刘子豪产品作品集</p>
+      <div>
+        <a href="index.html#drama">返回项目总览</a>
+        <a href="citywalk.html">查看 CityWalk Pulse 案例 →</a>
+        <a href="mailto:3407749043@qq.com">3407749043@qq.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="case-dialog" id="case-image-dialog" aria-label="界面图片查看器">
+    <button class="case-dialog__backdrop" type="button" data-dialog-close aria-label="关闭图片查看器"></button>
+    <div class="case-dialog__panel">
+      <div class="case-dialog__toolbar">
+        <span>完整界面</span>
+        <button type="button" data-dialog-close aria-label="关闭图片查看器">关闭</button>
+      </div>
+      <figure>
+        <img src="assets/drama/real-player.png" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+  </dialog>
+</body>
+</html>

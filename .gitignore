@@ -1,0 +1,13 @@
+# 本地启动脚本（不提交）
+dsh-web.bat
+
+# 临时/截图文件
+_*.png
+_*.jpg
+_*.html
+_*.js
+_*.txt
+
+# 系统文件
+Thumbs.db
+.DS_Store
