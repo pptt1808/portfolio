@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="刘子豪的 Alexent 项目案例：把 SAP ECM 迁移知识、项目状态和交付动作放进同一个 AI 工作台。">
+  <meta name="description" content="刘子豪的 Alexent 项目案例：把 SAP ECM 迁移知识、项目状态和交付动作收进同一个部门 AI 协作工作台。">
   <meta name="theme-color" content="#f3eee4">
   <title>Alexent｜刘子豪产品作品集</title>
   <link rel="stylesheet" href="styles.css">
@@ -42,12 +42,12 @@
     <section class="case-intro alexent-hero" id="top" data-case-section data-threads aria-labelledby="case-title">
       <div class="case-shell alexent-hero__grid">
         <div class="alexent-hero__copy">
-          <p class="case-kicker">Alexent · 企业智能副驾（SAP ECM 迁移交付）</p>
-          <h1 id="case-title">把迁移知识、项目状态和交付动作，放进同一个 AI 工作台</h1>
-          <p class="case-lede">Alexent 是一个面向 SAP ECM 迁移交付团队的本地优先工作台：五阶段项目流、任务与会议、长期记忆和带来源标注的知识检索，收敛在同一个 React + FastAPI 应用里。它探索的核心，是企业场景里的 Agent 如何做到每一条答案都有证据、每一次记忆都有边界。</p>
+          <p class="case-kicker">Alexent · 部门 AI 协作工作台（SAP ECM 迁移支持）</p>
+          <h1 id="case-title">把迁移知识、项目状态和交付动作，收进同一个 AI 协作工作台</h1>
+          <p class="case-lede">Alexent 是我们部门内部共同开发的一个 AI 协作工作台：五阶段项目流、任务与会议、长期记忆和带来源标注的知识检索，收敛在同一个 React + FastAPI 应用里。它探索的核心，是协作场景里的 Agent 如何做到每一条答案都有证据、每一次记忆都有边界。</p>
 
           <dl class="case-facts">
-            <div><dt>我的角色</dt><dd>个人主导 · 工作流与 Agent 机制设计、全栈实现</dd></div>
+            <div><dt>我的角色</dt><dd>参与部门共同开发 · 工作流与 Agent 机制设计</dd></div>
             <div><dt>前端</dt><dd>React 18 · Ant Design 5 · Vite</dd></div>
             <div><dt>后端</dt><dd>FastAPI · LangGraph · Chroma · SQLite</dd></div>
           </dl>
@@ -60,7 +60,7 @@
         </div>
 
         <figure class="alexent-shot case-reveal">
-          <button type="button" data-gallery-trigger data-full="assets/alexent-workspace.webp" data-caption="ECM Migration Copilot · 项目工作台" aria-label="放大查看 ECM 项目工作台">
+          <button type="button" data-gallery-trigger data-full="assets/alexent-workspace.webp" data-caption="Alexent · 项目工作台" aria-label="放大查看 Alexent 项目工作台">
             <img src="assets/alexent-workspace.webp" alt="Alexent ECM 迁移项目工作台，包含项目阶段、任务和 AI 助手" width="1440" height="1000" loading="eager" fetchpriority="high" decoding="async">
           </button>
           <figcaption>项目工作台：左侧项目列表，中间阶段与任务看板，右侧 Agent 对话与快捷动作。</figcaption>
@@ -72,15 +72,15 @@
       <div class="case-shell">
         <header class="case-heading case-heading--wide case-reveal">
           <p class="case-kicker">断点 · 为什么通用聊天不够</p>
-          <h2 id="gaps-title">ECM 迁移交付里，知识和动作之间断成了四截</h2>
+          <h2 id="gaps-title">ECM 迁移项目里，知识和动作之间断成了四截</h2>
           <p>迁移顾问的日常工作横跨文档库、项目表格、会议纪要和聊天工具。把通用 AI 聊天直接放进来，并不能把这些断点接上——它不知道项目走到哪一阶段，也不敢为答案负责。</p>
         </header>
 
         <div class="gap-grid">
           <article class="gap-card case-reveal"><span>断点 01</span><h3>知识躺着不动</h3><p>ArchiveLink、DMS 的迁移 runbook 和 SAP Note 沉在文档库里，顾问靠个人记忆和搜索经验把它们翻出来。</p></article>
           <article class="gap-card case-reveal"><span>断点 02</span><h3>状态散在多处</h3><p>阶段进度、任务分配、会议结论各自存放，AI 看不到"当前事实"，给出的建议常常停留在上一个版本。</p></article>
-          <article class="gap-card case-reveal"><span>断点 03</span><h3>答案不敢引用</h3><p>通用聊天不带来源、不带审核状态。在客户面前，没有证据链的 SAP 结论无法被直接使用。</p></article>
-          <article class="gap-card case-reveal"><span>断点 04</span><h3>记忆没有边界</h3><p>跨项目、跨成员的对话内容如果没有作用域隔离，企业数据就有串扰和泄露的风险。</p></article>
+          <article class="gap-card case-reveal"><span>断点 03</span><h3>答案不敢引用</h3><p>通用聊天不带来源、不带审核状态。在部门协作里，没有证据链的 SAP 结论不敢被直接采用。</p></article>
+          <article class="gap-card case-reveal"><span>断点 04</span><h3>记忆没有边界</h3><p>跨项目、跨成员的对话内容如果没有作用域隔离，部门数据就有串扰和泄露的风险。</p></article>
         </div>
 
         <div class="gap-chain case-reveal" aria-label="从知识到行动的断裂链路">
@@ -90,7 +90,7 @@
           <i aria-hidden="true">⇢</i>
           <div><small>使用现场</small><strong>通用聊天窗口</strong></div>
           <i aria-hidden="true">⇢</i>
-          <div><small>最终结果</small><strong>客户面前不敢用</strong></div>
+          <div><small>最终结果</small><strong>协作里不敢直接采用</strong></div>
         </div>
       </div>
     </section>
@@ -163,7 +163,7 @@ status: reviewed
 owner: ECM CoE
 reviewed_at: 2026-08-03
 ---</code></pre>
-            <p class="knowledge-pack__note">环境用 <code>RAG_ALLOWED_STATUSES</code> 定义可引用的状态集合；本地接受 <code>unreviewed / reviewed / approved</code>，客户环境可以收紧到只剩后两者。</p>
+            <p class="knowledge-pack__note">环境用 <code>RAG_ALLOWED_STATUSES</code> 定义可引用的状态集合；本地接受 <code>unreviewed / reviewed / approved</code>，部门环境可以收紧到只剩后两者。</p>
           </div>
 
           <div class="knowledge-pipeline case-reveal" aria-label="知识从进入到引用的治理流水线">
@@ -197,7 +197,7 @@ reviewed_at: 2026-08-03
         <header class="case-heading case-heading--wide case-reveal">
           <p class="case-kicker">记忆与权限 · 边界先于智能</p>
           <h2 id="memory-title">每一次记忆都有作用域，每一次改写都有审计</h2>
-          <p>企业场景里，"记住"本身是风险动作。Alexent 把状态、对话和长期记忆拆成三层，各自有明确的作用域与覆盖规则。</p>
+          <p>协作场景里，"记住"本身是风险动作。Alexent 把状态、对话和长期记忆拆成三层，各自有明确的作用域与覆盖规则。</p>
         </header>
 
         <div class="memory-grid">
@@ -211,7 +211,7 @@ reviewed_at: 2026-08-03
             <button type="button" data-gallery-trigger data-full="assets/alexent-login.webp" data-caption="Alexent · 本地演示登录" aria-label="放大查看 Alexent 登录界面">
               <img src="assets/alexent-login.webp" alt="Alexent 本地演示登录界面，选择账号进入工作区" width="1440" height="1000" loading="lazy" decoding="async">
             </button>
-            <figcaption>本地演示登录：签名会话 + 服务端项目与角色校验；共享部署前应替换为企业 OIDC / IAS。</figcaption>
+            <figcaption>本地演示登录：签名会话 + 服务端项目与角色校验；共享部署前应替换为统一的 OIDC / IAS 登录。</figcaption>
           </figure>
           <div class="memory-scope__copy">
             <p class="case-eyebrow">作用域规则</p>
@@ -251,7 +251,7 @@ reviewed_at: 2026-08-03
       <div class="case-shell">
         <header class="case-heading case-heading--wide case-reveal">
           <p class="case-kicker">判断 · 这个项目教会我的</p>
-          <h2 id="takeaway-title">企业级 Agent 的可信度，是设计出来的</h2>
+          <h2 id="takeaway-title">协作 Agent 的可信度，是设计出来的</h2>
         </header>
 
         <div class="takeaway-grid">
@@ -261,7 +261,7 @@ reviewed_at: 2026-08-03
         </div>
 
         <blockquote class="closing-learning case-reveal">
-          <p>这次实践让我更确信：企业 Agent 的可信度不来自更强的模型，而来自作用域、证据链和审计——把"知道边界"本身设计成产品能力。</p>
+          <p>这次实践让我更确信：Agent 的可信度不来自更强的模型，而来自作用域、证据链和审计——把"知道边界"本身设计成产品能力。</p>
           <footer>刘子豪 · 产品经理方向</footer>
         </blockquote>
       </div>
