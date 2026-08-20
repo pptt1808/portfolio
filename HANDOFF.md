@@ -144,5 +144,5 @@
 - 新增 Threads 集成：alexent 页 hero 标题区背景（主题绿 `#1d5a4b` 线条，`distance:-1` 高容器适配，鼠标悬停调制）。Vue Bits 组件 vanilla JS 移植，惯例同 FaultyTerminal/Prism/RippleGrid（无 ogl、透明 alpha 合成、离屏暂停、reduced-motion 跳过）。新文件无 `?v=` 版本号。
 - Threads 形态重构：用户反馈"线条几乎平行、无美感"→ 弃用 distance 平移，改为**两端汇聚 + 中间起伏**（左端全线汇聚一点、中间 Perlin 各自起伏 `perc*6` 防同相、右端收拢，`centerY`/`spread` 参数化）；并修复 gl_FragCoord 坐标系陷阱（centerY 顶部语义需 `1.0-uCenterY` 翻转，否则线条落视口外表现为全透明）。验证流程新增豆包视觉 API（`.env.local`：ARK 火山方舟 `doubao-seed-2-0-lite-260428`）辅助评审。
 - alexent hero 引文加半透明底板：`.case-lede` 纸面 78%（alexent 纸面 `#f3eee4`）+ `backdrop-filter: blur(10px)` + 圆角 14px，padding 16/20 配负 margin 保持文字原位（惯例同 citywalk/possibilities，遮挡 Threads 线条提高可读性）。
-- Alexent 定位口径调整：从"企业交付 Copilot / 个人主导"改为"**部门内部 AI 协作工作台 / 参与共同开发**"（与简历口径一致，避免面试追问矛盾）。涉及 `index.html`（首页索引、项目区块、project-meta）与 `alexent.html`（meta、hero、gaps/memory/takeaway 等章节，"客户/企业"措辞统一为"部门/协作"）。
+- Alexent 定位口径调整：从"企业交付 Copilot / 个人主导"改为"**部门内部 AI 协作工作台 / 独立完成 MVP 开发**"（产品场景来自部门真实工作，MVP 由本人独立开发；与简历口径一致）。涉及 `index.html`（首页索引、项目区块、project-meta）与 `alexent.html`（meta、hero、gaps/memory/takeaway 等章节，"客户/企业"措辞统一为"部门/协作"）。
 - 首页四个项目解释文字(lede)列增宽：`.project-header` grid 列比例 `1.1fr/.9fr → 1fr/1.1fr`（标题列回落、lede 解释列增宽，四个项目共用）。`styles.css` bump `?v=20260818-2`。
