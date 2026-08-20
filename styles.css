@@ -461,7 +461,7 @@ img { max-width: 100%; }
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1.25fr .75fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: clamp(38px, 8vw, 120px);
   align-items: end;
   margin-bottom: clamp(44px, 6vw, 82px);
