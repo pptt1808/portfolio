@@ -552,9 +552,10 @@ img { max-width: 100%; }
 .capability-grid h4 { margin: 26px 0 8px; font-family: var(--serif); font-size: 23px; }
 .capability-grid p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
 
-.project-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; margin-top: 58px; padding-top: 24px; border-top: 1px solid var(--line); }
+.project-footer { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 30px; margin-top: 58px; padding-top: 24px; border-top: 1px solid var(--line); }
 .project-footer p { margin: 0; color: var(--muted); font-size: 11px; }
-.project-footer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.project-footer-left { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.project-footer .case-entry { margin-left: auto; }
 .project-github { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 15px; font-weight: 800; letter-spacing: .04em; text-decoration: none; word-break: break-all; transition: color .2s ease, transform .2s var(--ease-out); }
 .project-github span { font-size: 15px; }
 .project-github:hover { color: var(--ink); transform: translateY(-2px); }
@@ -874,6 +875,7 @@ img { max-width: 100%; }
   .capability-grid { grid-template-columns: 1fr; }
   .capability-grid article { min-height: 150px; border-right: 0; }
   .project-footer { align-items: flex-start; flex-direction: column; }
+  .project-footer .case-entry { align-self: flex-end; }
   .project-meta { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
   .possibility-stage { min-height: 0; }
   .shot--desk { width: 95%; padding: 6px; }
