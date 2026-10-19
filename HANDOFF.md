@@ -147,3 +147,4 @@
 - Alexent 定位口径调整：从"企业交付 Copilot / 个人主导"改为"**部门内部 AI 协作工作台 / 独立完成 MVP 开发**"（产品场景来自部门真实工作，MVP 由本人独立开发；与简历口径一致）。涉及 `index.html`（首页索引、项目区块、project-meta）与 `alexent.html`（meta、hero、gaps/memory/takeaway 等章节，"客户/企业"措辞统一为"部门/协作"）。
 - 首页四个项目解释文字(lede)列增宽：`.project-header` grid 列比例 `1.1fr/.9fr → 1fr/1.1fr`（标题列回落、lede 解释列增宽，四个项目共用）。`styles.css` bump `?v=20260818-2`。
 - 各项目加 GitHub 链接：首页三个项目区块 footer 增加 `.project-github` 文字链接（citywalk-backend / drama-server / alexent），三个案例页 footer 增加 GitHub 入口。See All Possibilities 暂无公开仓库，链接待补。`styles.css` 新增 `.project-footer-actions`、`.project-github`，bump `?v=20261019-1`。
+- See All Possibilities 项目已上传 GitHub（`pptt1808/see-all-possibilities`，React + Vite 源码，排除 tmp/dist/node_modules）；首页 possibilities 区块与 `possibilities.html` 页脚补上 GitHub 链接，`possibilities.css` 新增 `.possibility-footer-links` 并 bump `?v=51`。
