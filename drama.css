@@ -401,7 +401,7 @@ pre { margin: 0; overflow: auto; }
 .case-footer .case-shell { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
 .case-footer p { margin: 0; font-size: 12px; }
 .case-footer div { display: flex; gap: 22px; }
-.case-footer a { color: var(--terracotta); font-size: 12px; font-weight: 800; text-decoration: none; }
+.case-footer a { color: var(--terracotta); font-size: 13px; font-weight: 800; text-decoration: none; word-break: break-all; }
 .case-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* 图片放大弹层 */

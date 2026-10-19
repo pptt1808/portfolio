@@ -347,7 +347,7 @@ blockquote cite { display: block; margin-top: 20px; color: var(--ink-soft); font
 .possibility-close a:hover, .possibility-close a:focus-visible { text-decoration: underline; }
 .possibility-footer { width: var(--content); margin: 0 auto; padding: 32px 0 46px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; }
 .possibility-footer a { color: var(--coral); text-decoration: none; }
-.possibility-footer-links { display: flex; gap: 18px; }
+.possibility-footer-links { display: flex; gap: 18px; font-size: 12px; flex-wrap: wrap; word-break: break-all; }
 
 .possibility-image-dialog { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 20px; color: var(--surface); background: transparent; border: 0; }
 .possibility-image-dialog[hidden] { display: none; }

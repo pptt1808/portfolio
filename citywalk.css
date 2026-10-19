@@ -1430,8 +1430,9 @@
 
 .case-footer a {
   color: var(--terracotta);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
+  word-break: break-all;
   text-decoration: none;
 }
 
