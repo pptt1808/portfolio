@@ -554,6 +554,12 @@ img { max-width: 100%; }
 
 .project-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; margin-top: 58px; padding-top: 24px; border-top: 1px solid var(--line); }
 .project-footer p { margin: 0; color: var(--muted); font-size: 11px; }
+.project-footer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.project-github { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; font-weight: 800; letter-spacing: .04em; text-decoration: none; transition: color .2s ease, transform .2s var(--ease-out); }
+.project-github span { font-size: 15px; }
+.project-github:hover { color: var(--ink); transform: translateY(-2px); }
+.project--drama .project-github:hover { color: #876b20; }
+.project--alexent .project-github:hover { color: #2f6bff; }
 .case-entry { display: inline-flex; align-items: center; gap: 12px; padding: 16px 28px; color: #fff; border-radius: 999px; font-size: 15px; font-weight: 800; letter-spacing: .03em; text-decoration: none; transition: transform .22s var(--ease-out), box-shadow .22s var(--ease-out), background .22s ease; }
 .case-entry span { font-size: 18px; transition: transform .18s var(--ease-out); }
 .case-entry:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }

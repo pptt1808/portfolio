@@ -11,3 +11,7 @@ _*.txt
 # 系统文件
 Thumbs.db
 .DS_Store
+
+# 本地工具临时文件
+.coding-agent/
+_peek*
